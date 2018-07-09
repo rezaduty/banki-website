@@ -1,7 +1,0 @@
-please exec gotest_doc/_build/html/index.html
-
-username : root
-password : rootoor
-
-username : pi
-password toor
