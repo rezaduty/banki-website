@@ -1,0 +1,959 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>نوبت دهی از طریق ربات &mdash; نوبت دهی غیر حضوری بانک Banki v0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+          <link href='http://www.fontonline.ir/css/BYekan.css' rel='stylesheet' type='text/css'>
+<style>
+  *{
+  font-family:'BYekan',Sans-Serif;
+ }
+ h1,h2,h3,h4,h5,h6{
+    font-family:'BYekan',Sans-Serif !important;
+
+ }
+ p{
+    font-family:'BYekan',Sans-Serif;
+    font-size: 17px;
+ }
+ .caption-text{
+  color: #2980b9;
+ }
+ .wy-menu-vertical{
+  width: 291px !important;
+ }
+ .wy-nav-content{
+  max-width: 100% !important;
+ }
+ pre{
+   direction: ltr !important;
+ }
+</style>
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/syncthing.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="نوبت دهی غیر حضوری بانک Banki v0.1 documentation" href="../index.html"/>
+        <link rel="next" title="سرعت سیستم چگونه است" href="../gotest-benchmark/intro-benchmark.html"/>
+        <link rel="prev" title="نوبت دهی از طریق وبسایت چگونه است ؟" href="../gotest-webapp/webapp-overview.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+  <style type="text/css">
+      .menui {
+      background: #fff;
+      transition: 0.6s ease;
+      transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
+      margin-top: 10px;
+      position: absolute;
+    }
+
+    .icon1 {
+      z-index: 999;
+      position: fixed;
+      display: block;
+      padding: 9px;
+      height: 32px;
+      width: 32px;
+      margin: 0px;
+      top: 0;
+      left: 2%;
+    }
+
+@media (min-width : 320px) {
+  .icon1{
+    top: 3%;
+    left: 7%;
+  }
+}
+
+    .mobilenav {
+      font-family: inherit;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 153, 153, 0.7);
+      opacity: 0.9;
+    }
+
+    .mobilenav li {
+      list-style-type: none;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .mobilenav li a {
+      font-size: 150%;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 300;
+      width: 100%;
+    }
+
+    .mobilenav li:first-child { margin-top: 60px; }
+
+    .top-animate {
+      background: #fff !important;
+      top: 13px !important;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .mid-animate { opacity: 0; }
+
+    .bottom-animate {
+      background: #fff !important;
+      top: 13px !important;
+      -webkit-transform: rotate(-225deg);
+      transform: rotate(-225deg);
+    }
+
+    .top-menu {
+      top: 5px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+
+    .mid-menu {
+      top: 13px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+
+    .bottom-menu {
+      top: 21px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+    
+  </style>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> نوبت دهی غیر حضوری بانک Banki
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="جست و جو" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">راه اندازی</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-run/server-run.html">راه اندازی پروژه</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-run/server-run.html#id2">راه اندازی سرور</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-run/server-run.html#id5">راه اندازی بانک ها</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-run/server-run.html#id6">راه اندازی بات</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">مقدمه</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html">به چه دردی میخورد ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id2">آیا استفاده از آن آسان است ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id3">سخنی با بانک داران</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id4">سیستم نوبت دهی چیست ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id5">سیستم نوبت‌دهی بی‌سیم</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id6">نوبت دهی پیامکی چیست؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id7">کیوسک نوبت دهی یا استند نوبت دهی چیست؟</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/about-project.html#id8">منابع</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">هسته - سرور</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/algorithm-overview.html">بررسی الگوریتم ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/server-overview1.html">بررسی سرور قسمت ۱</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#http-rest">از HTTP و REST چه می دانید ؟</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#rest">REST چیست ؟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#http">HTTP چیست ؟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id2">HTTP را جاسوسی کنید !</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#url">URL چیست ؟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id3">عملیات های مختلف HTTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#get">GET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#put">PUT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#delete">DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#post">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#rest-api">REST API چیست و چگونه کار می کند ؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#soap-restful">تفاوت وب سرویس های SOAP و  RESTful چیست؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#restful-rest">RESTful یا REST بودن یک وب سایت به چه معناست؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#json">مدل داده JSON</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id4">خصوصیات JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id5">منابع</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/server-overview2.html">بررسی سرور قسمت ۲</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-golang">آشنایی با زبان برنامه نویسی Go یا Golang</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview2.html#id2">چرا گو ?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go">Go یک زبان مدرن و همه منظوره است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id3">Go یک زبان (آزاد) و متن باز است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id4">Go یک زبان کامپایل شونده است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-syntax">Go و Syntax آشنا</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-procedural">Go یک زبان رویه‌ای است (Procedural)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id5">ابتدا یک توضیح ساده در باره کلاس‌ها و اشیا</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-class-struct">Go به جای Class از Struct استفاده می‌کند</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-composition">Go از Composition به جای وراثت استفاده می‌کند</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-static-type">Go یک زبان Static-Type است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-concurrency">Go و Concurrency:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview2.html#coroutine-thread">Coroutine‌ها چندین فرق اساسی با Thread‌ها دارند:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-functional">Go و قابلیت‌های Functional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#closure">توضیح درباره Closure ها:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id6">قابلیت‌های نداشته، قابلیت اصلی زبان Go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id7">نواقص زبان برنامه نویسی Go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id8">از کجا کار با Go را شروع کنیم؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id9">کاربرد زبان برنامه نویسی Go کجاست؟</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview2.html#id10">منابع</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/server-code-overview.html">بررسی کد سرور</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-code-overview.html#id2">ساختار پروژه</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-code-overview.html#id5">بررسی فایل های پروژه</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#logger-go">logger.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#error-go">error.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#handlers-go">handlers.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#repo-go">repo.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#router-go">router.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#routes-go">routes.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#todo-go">todo.go</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-code-overview.html#main-go">main.go</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">رابط کاربری - وبسایت</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-webapp/webapp-overview.html">نوبت دهی از طریق وبسایت چگونه است ؟</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id2">صفحه اصلی</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id3">ثبت نام</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id4">بررسی کد و ساختار</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id5">بررسی  ساختار پوشه ها</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id6">بررسی کد های مربوطه</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#index-html">index.html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#gotest-logup-html">gotest.logup.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">رابط کاربری - ربات</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">نوبت دهی از طریق ربات</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">نوبت دهی از طریق ربات چگونه است ؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">بررسی کد</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#colorer-py">Colorer.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telegrambot-py">telegrambot.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">گزارشات</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-benchmark/intro-benchmark.html">سرعت سیستم چگونه است</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-benchmark/intro-benchmark.html#id2">برنامه تست</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">دستگاه شبیه ساز نوبت دهی غیر حضوری</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-simulation/simul-information.html">مشخصات دستگاه</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-simulation/simul-information.html#id2">اندازه و نوع بنده دستگاه</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-simulation/simul-information.html#id3">قطعات به کار رفته در دستگاه</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-simulation/simul-overview.html">بررسی دستگاه</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-simulation/simul-overview.html#id2">بررسی مدار</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-simulation/simul-overview.html#id3">بررسی کد</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">نوبت دهی غیر حضوری بانک Banki</a>
+      </nav>
+
+
+
+      
+      <!-- left menu -->
+      <div class="wy-nav-content">
+        <div class="mobilenav"> 
+          <li><a target="_blank" href="#">Website</a></li> 
+          <li><a target="_blank" href="#">App</a></li> 
+          <li><a target="_blank" href="#">Telegram Bot</a></li> 
+        </div>
+        <a href="javascript:void(0)" class="icon1">
+          <div class="hamburger">
+            <div class="menui top-menu"></div>
+            <div class="menui mid-menu"></div>
+            <div class="menui bottom-menu"></div>
+          </div>
+        </a>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">مستندات</a> &raquo;</li>
+      
+    <li>نوبت دهی از طریق ربات</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/gotest-bot/bot-overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="bot-overview">
+<span id="id1"></span><h1>نوبت دهی از طریق ربات<a class="headerlink" href="#bot-overview" title="Permalink to this headline">¶</a></h1>
+<img alt="../_images/a1649c56fa9f805828.gif" src="../_images/a1649c56fa9f805828.gif" />
+<div class="section" id="id2">
+<h2>نوبت دهی از طریق ربات چگونه است ؟<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>به <a class="reference external" href="https://telegram.me/GoQueue_bot/">این</a> رفته</p>
+<p>ابتدا start را میزنیم</p>
+<p>سپس ابندا <cite>شماره من را بفرست</cite> را انتخاب میکنیم</p>
+<p>بعد <cite>بانک</cite> را انتخاب میکنیم</p>
+<p>و بعد از مشاهده لیست بانک ها <cite>نوبت</cite> را انتخاب میکنیم و بانک مورد نظر را انتخاب میکنیم</p>
+<p>همچنین از بخش <cite>نوبت من</cite> نوبت گرفته شده قابل پیگیری است</p>
+<p>بخش <cite>موقعیت من</cite> صورت آزمایشی وجود دارد و هیچ کار بخصوصی صورت نمیپذیرد</p>
+</div>
+<div class="section" id="id4">
+<h2>بررسی کد<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>برای لاگ های رنگی فایل زیر را در کد اصلی فراخوانی میکنیم</p>
+<div class="section" id="colorer-py">
+<h3>Colorer.py<a class="headerlink" href="#colorer-py" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-golang notranslate"><div class="highlight"><pre><span></span>   #!/usr/bin/env python
+   # encoding: utf-8
+   import logging
+   # now we patch Python code to add color support to logging.StreamHandler
+   def add_coloring_to_emit_windows(fn):
+           # add methods we need to the class
+       def _out_handle(self):
+           import ctypes
+           return ctypes.windll.kernel32.GetStdHandle(self.STD_OUTPUT_HANDLE)
+       out_handle = property(_out_handle)
+
+       def _set_color(self, code):
+           import ctypes
+           # Constants from the Windows API
+           self.STD_OUTPUT_HANDLE = -11
+           hdl = ctypes.windll.kernel32.GetStdHandle(self.STD_OUTPUT_HANDLE)
+           ctypes.windll.kernel32.SetConsoleTextAttribute(hdl, code)
+
+       setattr(logging.StreamHandler, &#39;_set_color&#39;, _set_color)
+
+       def new(*args):
+           FOREGROUND_BLUE      = 0x0001 # text color contains blue.
+           FOREGROUND_GREEN     = 0x0002 # text color contains green.
+           FOREGROUND_RED       = 0x0004 # text color contains red.
+           FOREGROUND_INTENSITY = 0x0008 # text color is intensified.
+           FOREGROUND_WHITE     = FOREGROUND_BLUE|FOREGROUND_GREEN |FOREGROUND_RED
+       # winbase.h
+           STD_INPUT_HANDLE = -10
+           STD_OUTPUT_HANDLE = -11
+           STD_ERROR_HANDLE = -12
+
+           # wincon.h
+           FOREGROUND_BLACK     = 0x0000
+           FOREGROUND_BLUE      = 0x0001
+           FOREGROUND_GREEN     = 0x0002
+           FOREGROUND_CYAN      = 0x0003
+           FOREGROUND_RED       = 0x0004
+           FOREGROUND_MAGENTA   = 0x0005
+           FOREGROUND_YELLOW    = 0x0006
+           FOREGROUND_GREY      = 0x0007
+           FOREGROUND_INTENSITY = 0x0008 # foreground color is intensified.
+
+           BACKGROUND_BLACK     = 0x0000
+           BACKGROUND_BLUE      = 0x0010
+           BACKGROUND_GREEN     = 0x0020
+           BACKGROUND_CYAN      = 0x0030
+           BACKGROUND_RED       = 0x0040
+           BACKGROUND_MAGENTA   = 0x0050
+           BACKGROUND_YELLOW    = 0x0060
+           BACKGROUND_GREY      = 0x0070
+           BACKGROUND_INTENSITY = 0x0080 # background color is intensified.
+
+           levelno = args[1].levelno
+           if(levelno&gt;=50):
+               color = BACKGROUND_YELLOW | FOREGROUND_RED | FOREGROUND_INTENSITY | BACKGROUND_INTENSITY
+           elif(levelno&gt;=40):
+               color = FOREGROUND_RED | FOREGROUND_INTENSITY
+           elif(levelno&gt;=30):
+               color = FOREGROUND_YELLOW | FOREGROUND_INTENSITY
+           elif(levelno&gt;=20):
+               color = FOREGROUND_GREEN
+           elif(levelno&gt;=10):
+               color = FOREGROUND_MAGENTA
+           else:
+               color =  FOREGROUND_WHITE
+           args[0]._set_color(color)
+
+           ret = fn(*args)
+           args[0]._set_color( FOREGROUND_WHITE )
+           #print &quot;after&quot;
+           return ret
+       return new
+
+   def add_coloring_to_emit_ansi(fn):
+       # add methods we need to the class
+       def new(*args):
+           levelno = args[1].levelno
+           if(levelno&gt;=50):
+               color = &#39;\x1b[31m&#39; # red
+           elif(levelno&gt;=40):
+               color = &#39;\x1b[31m&#39; # red
+           elif(levelno&gt;=30):
+               color = &#39;\x1b[33m&#39; # yellow
+           elif(levelno&gt;=20):
+               color = &#39;\x1b[32m&#39; # green
+           elif(levelno&gt;=10):
+               color = &#39;\x1b[35m&#39; # pink
+           else:
+               color = &#39;\x1b[0m&#39; # normal
+           args[1].msg = color + args[1].msg +  &#39;\x1b[0m&#39;  # normal
+           #print &quot;after&quot;
+           return fn(*args)
+       return new
+
+   import platform
+   if platform.system()==&#39;Windows&#39;:
+       # Windows does not support ANSI escapes and we are using API calls to set the console color
+       logging.StreamHandler.emit = add_coloring_to_emit_windows(logging.StreamHandler.emit)
+   else:
+       # all non-Windows platforms are supporting ANSI escapes so we use them
+       logging.StreamHandler.emit = add_coloring_to_emit_ansi(logging.StreamHandler.emit)
+       #log = logging.getLogger()
+       #log.addFilter(log_filter())
+       #//hdlr = logging.StreamHandler()
+       #//hdlr.setFormatter(formatter())
+
+نحوه فراخوانی فایل اصلی بات در بخش راه اندازی آورده شده است
+</pre></div>
+</div>
+</div>
+<div class="section" id="telegrambot-py">
+<h3>telegrambot.py<a class="headerlink" href="#telegrambot-py" title="Permalink to this headline">¶</a></h3>
+<p>ابتدا فایل</p>
+<div class="highlight-golang notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+</pre></div>
+</div>
+<p>کتابخوانه های فراخوانی شده</p>
+<div class="highlight-golang notranslate"><div class="highlight"><pre><span></span>from telegram import ReplyKeyboardMarkup
+import telegram
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+import logging
+import Colorer
+import json
+import requests
+import re
+from validate_email import validate_email
+</pre></div>
+</div>
+<p>موارد مشترک در سطح برنامه</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable logging</span>
+<span class="c1"># فعال سازی لاگ در پروژه با این فرمت</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(name)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
+                    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># موارد مربوط به ساخت کیبورد مجازی</span>
+<span class="n">CHOOSING</span><span class="p">,</span> <span class="n">TYPING_REPLY</span><span class="p">,</span> <span class="n">TYPING_CHOICE</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">location_keyboard</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">KeyboardButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;موقعیت من را بفرست&quot;</span><span class="p">,</span> <span class="n">request_location</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">contact_keyboard</span> <span class="o">=</span> <span class="n">telegram</span><span class="o">.</span><span class="n">KeyboardButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;شماره من را بفرست&quot;</span><span class="p">,</span> <span class="n">request_contact</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">reply_keyboard</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;🎫 نوبت&#39;</span><span class="p">,</span> <span class="s1">&#39;🏦 بانک&#39;</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">location_keyboard</span><span class="p">,</span> <span class="n">contact_keyboard</span><span class="p">],</span>
+                <span class="p">[</span><span class="s1">&#39;🙂 نوبت من&#39;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s1">&#39;🚪 انصراف&#39;</span><span class="p">]]</span>
+<span class="c1"># توسط این متغیر در کل برنامه کیبود را صدا میزنیم</span>
+<span class="n">markup</span> <span class="o">=</span> <span class="n">ReplyKeyboardMarkup</span><span class="p">(</span><span class="n">reply_keyboard</span><span class="p">,</span> <span class="n">one_time_keyboard</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">getq</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">banks</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">reply_markup</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="n">chat_id</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>تابع start در صورتی بات start شده  بود اجرا میشود</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a few command handlers. These usually take the two arguments bot and</span>
+<span class="c1"># update. Error handlers also receive the raised TelegramError object in error.</span>
+<span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">name</span><span class="p">,</span><span class="n">chat_id</span>
+    <span class="n">chat_id</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">chat_id</span>
+    <span class="c1">#bot.send_message(chat_id=chat_id,</span>
+    <span class="c1">#             text=&quot;*bold* _italic_ `fixed width font` [link](http://google.com).&quot;,</span>
+    <span class="c1">#              parse_mode=telegram.ParseMode.MARKDOWN)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">from_user</span><span class="o">.</span><span class="n">first_name</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+    <span class="c1"># لاگ حاوی کد چت با کاربر و اسم او</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Start With: [&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;] and With Chat Id: [&quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">chat_id</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;]&quot;</span><span class="p">)</span>
+    <span class="c1"># ارسال پیام برا کاربر با نام خود و نشان دادن کیبود مجازی به او</span>
+    <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span>
+        <span class="s2">&quot;سلام &quot;</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;&quot;</span>\
+        <span class="s2">&quot;میتوانم کمکتان کنم</span><span class="se">\n</span><span class="s2">&quot;</span>\
+        <span class="s2">&quot;لطفا ابتدا شماره خود را بفرستید&quot;</span><span class="p">,</span>
+        <span class="n">reply_markup</span><span class="o">=</span><span class="n">markup</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>تابعی برای نوبت گیری، مدیریت نوبت، نمایش بانک ها</p>
+<div class="highlight-golang notranslate"><div class="highlight"><pre><span></span>   ## branch code should not be static
+   def echo(bot, update):
+
+       global getq,banks,reply_markup,reply_markup1,reply_markup2
+
+       try:
+           # کاربر در هر صورت اگر برگشت را انتخاب کنید کیبورد اصلی برنامه به نشان داده میشود
+           if update.message.text == &quot;▶ برگشت&quot;.decode(&#39;utf-8&#39;):
+               reply_markup = telegram.ReplyKeyboardRemove(reply_markup)
+               bot.send_message(chat_id=chat_id, text=&quot;برگشت به صفحه اصلی&quot;, reply_markup=markup)
+
+
+           # اگر کاربر نوبت من را انتخاب کرده بود
+           # show my turn number
+           msg = getBank()
+           ## api for get tbl_turn_number !!!!
+           if  update.message.text == &#39;🙂 نوبت من&#39;.decode(&#39;utf-8&#39;):
+           # اگر شماره تلفن خود را نفرستاده بود
+               if number == &quot;&quot;:
+                   # کیبورد اصلی برای ارسال شماره تلفن نشان داده میشود
+                   update.message.reply_text(
+                   &quot;لطفا ابتدا شماره خود را بفرستید&quot;,
+                   reply_markup=markup)
+                   start(bot,update)
+               else:
+                   banks = &quot;&quot;
+                   # لیست تمامی کاربران
+                   data = getUser()
+                   try:
+                       for item in data:
+                           # اگر شماره گرفته شده از کاربر با شماره تلفن داخل پایگاه داده یکسان بود فرآیند نوبت گیری انجام شود
+                           if item[&#39;phone_number&#39;]==number:
+                               # دریافت کد کاربری همان کاربر
+                               userID = item[&#39;user_id&#39;]
+                               #  نوبت آن فرد
+                               userTurnNumber = item[&#39;turn_number&#39;]
+                       # دریافت کد بانکی که کاربر از آن نوبت گرفته است
+                       showq = getQueue(userID)
+                       # جداکردن مقدار
+                       bankID = showq[0][&#39;bank_id&#39;]
+                       for itemm in msg:
+                           # اگر کد بانک با کد های بانکی موجود همخوانی داشت تعداد افراد فعال داخل صف دریافت شود
+                           if itemm[&#39;bank_id&#39;] == bankID:
+                               bankActiveQueue = itemm[&#39;active_turns_number&#39;]
+                       # نوبت فرد حاصل از نوبت فرد - تعداد افراد فعال داخل صف است
+                       res = (int(userTurnNumber))-(int(bankActiveQueue))
+                       banks =banks+&quot;\nنوبت: &quot;.decode(&#39;utf-8&#39;)+ userTurnNumber+&quot;\nمانده: &quot;.decode(&#39;utf-8&#39;)+ str(res) +&quot;\n=-=-=-=-=-=-=-=-=-=-&quot;
+                       نمایش تعداد افراد باقیمانده به او
+                       update.message.reply_text(banks)
+                   except:
+                       # خطا در مراحل شاید به دلیل نفرستادن شماره توسط بات باشد
+                       logging.error(&quot;My Queue Error&quot;)
+                       update.message.reply_text(&quot;لطفا شماره خود را بفرستید&quot;)
+
+           flag = False
+           # اگر کاربر نوبت من را انتخاب کرده بود
+           # برای دریافت نوبت داخل این شرط میشویم
+           if  update.message.text == &#39;🎫 نوبت&#39;.decode(&#39;utf-8&#39;):
+               # اگر شماره فرستاده نشده بود پیام زیر چاپ میشود
+               if number == &quot;&quot;:
+                   update.message.reply_text(
+                   &quot;لطفا ابتدا شماره خود را بفرستید&quot;,
+                   reply_markup=markup)
+                   start(bot,update)
+               else:
+                   banks = &quot;&quot;
+                   data = getUser()
+                   for i in data:
+                       ## TODO must be checked
+                       try:
+                           # اگر شماره تلفن فرد در سیستم موجود بود
+                           if i[&#39;phone_number&#39;]==number:
+                               logging.error(&quot;User Sign in&quot;)
+                               flag = True
+                               break
+
+                       except Exception as es:
+                           logging.error(&quot;Queue&quot;)
+                           update.message.reply_text(
+                           &quot;لطفا ابتدا شماره خود را بفرستید&quot;,
+                           reply_markup=markup)
+                           break
+                           #update.message.reply_text(str(es))
+                   if not flag:
+                   در انتها اگر کاربر در سیستم ثبت نام نکرده بود برای ثبت نام به تابع user_register() فرستاده میشود
+                       logging.error(&quot;Not Register User [&quot;+name+&quot;] [&quot;+str(number)+&quot;]&quot;)
+                       user_register(name,number)
+                       flag = False
+
+                   custom_keyboard = [[&#39;▶ برگشت&#39;]]
+                   getq = True
+                   # create string with bank information
+                   # ساخت کیبورد مجازی با لیست بانک ها
+                   for item in msg:
+                       # تعداد افراد فعال در صف
+                       qu = int(item[&#39;turns_number&#39;])-int(item[&#39;active_turns_number&#39;])
+                       banks =banks+&quot;\nشماره: &quot;.decode(&#39;utf-8&#39;)+ item[&#39;bank_id&#39;]+&quot;\nبانک: &quot;.decode(&#39;utf-8&#39;)+ item[&#39;name&#39;] +&quot;\nشعبه: &quot;.decode(&#39;utf-8&#39;)+ item[&#39;branch&#39;] \
+                       +&quot;\nتعداد افراد داخل صف: &quot;.decode(&#39;utf-8&#39;)+ str(qu) +&quot;\n=-=-=-=-=-=-=-=-=-=-&quot;
+                       key = item[&#39;bank_id&#39;] + &quot; : &quot; + item[&#39;name&#39;] + &quot; - شعبه &quot;.decode(&quot;utf-8&quot;) + item[&#39;branch&#39;] + &quot; 👉&quot;.decode(&quot;utf-8&quot;)
+                       custom_keyboard.append([key])
+                   # نمایش کیبورد مجازی به کاربر
+                   reply_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+                   bot.send_message(chat_id=chat_id,
+                           text=&quot;لطفا با توجه به موارد زیر بانک خود را انتخاب کنید&quot;,
+                           reply_markup=reply_markup)
+                   # انتخاب بانک مورد نظر از لیست مجازی ساخته شده
+                   update.message.reply_text(banks+&quot;\nلطفا شماره بانک مورد نظر را نتخاب کنید&quot;.decode(&#39;utf-8&#39;))
+
+
+           # Get Queue
+           f  = False
+           # با این شرط فرآیند نوبت گیری آغاز میشود
+           # شرط شامل این است که ابتدا  پیام فرستاده شده از طرف کاربر شامل این  مقدار 👉  باشد
+           # از طرفی چون لیست بانک هایی که کاربر انتخاب میکند ابتدای همگی دارای همام مقدار بالا می باشد
+           if checkDash(update.message.text):
+               if number == &quot;&quot;:
+                   update.message.reply_text(
+                   &quot;لطفا ابتدا شماره خود را بفرستید&quot;,
+                   reply_markup=markup)
+                   start(bot,update)
+               else:
+                   # جدا سازی کد بانک از پیام ارسالی
+                   first = update.message.text.split(&quot;:&quot;,1)
+                   bankID = first[0]
+                   data = getUser()
+                   try:
+                       for d in data:
+                           # احراز هویت کاربر با چک کردن شماره تلفن کاربر و موجود بودن آن در پایگاه داده
+                           if d[&#39;phone_number&#39;] == number:
+                               # جداسازی کد کاربری فرد
+                               userID = d[&#39;user_id&#39;]
+                               # ثبت نوبت با کد بانک و کد کاربری فرد
+                               queue(bankID,userID)
+                               update.message.reply_text(&quot;با موفقیت ثبت شد از بخش نوبت من پیگیری کنید&quot;)
+                               f = True
+                       if not f:
+                           update.message.reply_text(&quot;لطفا شماره خود را بفرستید&quot;)
+                   except:
+                           logging.error(&quot;Add Queue Error&quot;)
+                           update.message.reply_text(&quot;خطا&quot;)
+
+           # اگر کاربر بانک را انتخاب کرده بود
+           if  update.message.text == &#39;🏦 بانک&#39;.decode(&#39;utf-8&#39;):
+               banks = &quot;&quot;
+               for item in msg:
+                   # ساخت رشته شامل شعبه بانک کد بانک نام بانک تعداد افراد فعال داخل صف
+                   qu = int(item[&#39;turns_number&#39;])- int(item[&#39;active_turns_number&#39;])
+                   banks =banks+&quot;\nبانک: &quot;.decode(&#39;utf-8&#39;)+ item[&#39;name&#39;] +&quot;\nشعبه: &quot;.decode(&#39;utf-8&#39;)+ item[&#39;branch&#39;]\
+                   +&quot;\nکد شعبه: &quot;.decode(&#39;utf-8&#39;)+ item[&#39;code&#39;] +&quot;\nآدرس: &quot;.decode(&#39;utf-8&#39;)+ item[&#39;address&#39;] +&quot;\nتعداد افراد داخل صف: &quot;.decode(&#39;utf-8&#39;)+ str(qu)+&quot;\n=-=-=-=-=-=-=-=-=-=-&quot;
+               # نمایش تمامی بانک ها
+               # نمایش رشته شامل موارد مربوط به بانک
+               update.message.reply_text(banks)
+       except :
+           logger.error(&quot;No Connect to Server&quot;)
+           update.message.reply_text(&quot;ارتباط قطع است&quot;)
+
+
+تابعی برای بررسی پیام کاربر که در نوبت گیری استفاده میشود
+</pre></div>
+</div>
+<p>تابعی برای ثبت نام کاربر که توسط نام و شماره تلفن ثبت نام صورت میگیرد</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">user_register</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">number</span><span class="p">):</span>
+     <span class="c1"># آدرس سرور بخش users برای ثبت نام که حتما باید از نوع post باشد</span>
+     <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;http://localhost:8088/users&#39;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>\
+         <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+         <span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;phone_number&quot;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">),</span>
+         <span class="s2">&quot;turn_number&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;password&quot;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">),</span>
+         <span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="s2">&quot;email@bot.com&quot;</span><span class="p">)</span>
+         <span class="p">})</span>
+     <span class="k">if</span> <span class="n">r</span><span class="p">:</span>
+         <span class="k">return</span> <span class="bp">True</span>
+         <span class="c1"># اگر درست بود لاگی حاوی اسم کاربر و شماره فرد چاپ شود</span>
+         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;User Register: [&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;] and [&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;]&quot;</span><span class="p">)</span>
+     <span class="k">else</span><span class="p">:</span>
+         <span class="k">return</span> <span class="bp">False</span>
+         <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;User Not Register: [&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;] and [&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>تابعی نوبت گیری که توسط کد کاربر و کد بانک صورت میگیرد</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add to Queue</span>
+<span class="k">def</span> <span class="nf">queue</span><span class="p">(</span><span class="n">bank_id</span><span class="p">,</span><span class="n">user_id</span><span class="p">):</span>
+    <span class="c1"># آدرس سرور بخش addqueue برای نوبت گیری که حتما باید از نوع post باشد</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://localhost:8088/addqueue/&quot;</span><span class="o">+</span><span class="n">bank_id</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="c1"># در این برنامه هر پاسخی از سرور داخل متغیر data قرار میگیرد</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="c1"># اگر درست بود لاگی کد کاربر و کد بانک چاپ شود</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Success Add to Queue-Bank Id: &quot;</span><span class="o">+</span><span class="n">bank_id</span><span class="o">+</span><span class="s2">&quot; User Id: &quot;</span><span class="o">+</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;ثبت شد&quot;</span>
+</pre></div>
+</div>
+<p>تابعی برای لیست همه ی افراد</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getUser</span><span class="p">():</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://localhost:8088/users&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+<p>تابعی برای لیست همه ی بانک ها</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getBank</span><span class="p">():</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://localhost:8088/banks&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+<p>تابعی برای دریافت نوبت کاربر</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show My Turn number</span>
+<span class="k">def</span> <span class="nf">getQueue</span><span class="p">(</span><span class="n">userId</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://localhost:8088/queue/&quot;</span><span class="o">+</span><span class="n">userId</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+<p>تابعی نمونه برای چگونگی کار با موقعیت مکانی</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saveLocation</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">location</span>
+    <span class="c1"># ساخت آرایه برای قرار طول و عرض در یک آرایه</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="p">[[]]</span>
+    <span class="c1">#logger.warn(&#39;Update &quot;%s&quot; caused error &quot;%s&quot;&#39; % (update, error))</span>
+    <span class="c1"># دریافت عرض جغرافیایی</span>
+    <span class="n">loc_x</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">location</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span>
+     <span class="c1"># دریافت طول جغرافیایی</span>
+    <span class="n">loc_y</span> <span class="o">=</span> <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">location</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span>
+    <span class="c1"># اضافه کردن به آرایه</span>
+    <span class="n">location</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc_x</span><span class="p">)</span>
+    <span class="n">location</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loc_y</span><span class="p">)</span>
+    <span class="c1"># لاگ حاوی طول و عرض چاپ شود</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;SaveLocation: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">loc_x</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; , &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">loc_y</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>تابعی برای دریافت شماره تلفن کاربر</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saveNumber</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">update</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">number</span>
+    <span class="c1">#logger.warn(&#39;Update &quot;%s&quot; caused error &quot;%s&quot;&#39; % (update, error))</span>
+    <span class="c1"># با این دستور شماره تلفن کاربر گرفته میشود</span>
+    <span class="n">number</span> <span class="o">=</span>  <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">contact</span><span class="p">[</span><span class="s1">&#39;phone_number&#39;</span><span class="p">]</span>
+    <span class="c1"># لاگی حاوی شماره تلفن کاربر</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;SaveNumber: &quot;</span><span class="o">+</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>برای نمایش هشدار و خطا در برنامه</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="n">bot</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Update &quot;</span><span class="si">%s</span><span class="s1">&quot; caused error &quot;</span><span class="si">%s</span><span class="s1">&quot;&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">error</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>تابع اصلی برنامه</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Create the EventHandler and pass it your bot&#39;s token.</span>
+    <span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="s2">&quot;396578852:AAH5omKp0GdAqRx-xZDeCz-5DJezldkTjdQ&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Get the dispatcher to register handlers</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span>
+
+    <span class="c1"># on different commands - answer in Telegram</span>
+    <span class="c1"># در صورتی که start زده شود به تابع start فراخونده میشود</span>
+    <span class="n">dp</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
+
+    <span class="c1"># on noncommand i.e message - echo the message on Telegram</span>
+    <span class="c1"># هر پیامی که به سیستم فرستاده شود به تابع echo فرستاده میشود</span>
+    <span class="n">dp</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">MessageHandler</span><span class="p">(</span><span class="n">Filters</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">echo</span><span class="p">))</span>
+    <span class="c1"># on Location and Phone number i.e message - echo the message on Telegram</span>
+    <span class="c1"># در صورتی کاربر موقعیت من را بفرست را انتخاب کرده باشد</span>
+    <span class="n">dp</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">MessageHandler</span><span class="p">(</span><span class="n">Filters</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="n">saveLocation</span><span class="p">))</span>
+    <span class="c1"># در صورتی کاربر شماره من را بفرست را انتخاب کرده باشد</span>
+    <span class="n">dp</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">MessageHandler</span><span class="p">(</span><span class="n">Filters</span><span class="o">.</span><span class="n">contact</span><span class="p">,</span> <span class="n">saveNumber</span><span class="p">))</span>
+
+
+    <span class="c1"># ارسال تمامی خطا ها به تابع erro</span>
+    <span class="c1"># log all errors</span>
+    <span class="n">dp</span><span class="o">.</span><span class="n">add_error_handler</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+
+    <span class="c1"># بات روشن میشود</span>
+    <span class="c1"># Start the Bot</span>
+    <span class="n">updater</span><span class="o">.</span><span class="n">start_polling</span><span class="p">()</span>
+
+    <span class="c1"># Run the bot until you press Ctrl-C or the process receives SIGINT,</span>
+    <span class="c1"># SIGTERM or SIGABRT. This should be used most of the time, since</span>
+    <span class="c1"># start_polling() is non-blocking and will stop the bot gracefully.</span>
+    <span class="c1">#  بات منتظر دستورات و برای متوفق سازی باید چند باز کلید های ترکیبی Ctrl + c را بزنیم</span>
+    <span class="n">updater</span><span class="o">.</span><span class="n">idle</span><span class="p">()</span>
+
+<span class="c1"># کامپایلر اگر برنامه به صورت مستقل اجرا شده باشد تابع main را صدا میزند</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../gotest-benchmark/intro-benchmark.html" class="btn btn-neutral float-right" title="سرعت سیستم چگونه است" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../gotest-webapp/webapp-overview.html" class="btn btn-neutral" title="نوبت دهی از طریق وبسایت چگونه است ؟" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jul 09, 2018.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    $(".icon1").click(function () {
+      $(".mobilenav").fadeToggle(500);
+      $(".top-menu").toggleClass("top-animate");
+      $(".mid-menu").toggleClass("mid-animate");
+      $(".bottom-menu").toggleClass("bottom-animate");
+    });
+  });
+</script>
+
+</body>
+</html>

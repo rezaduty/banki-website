@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>مشخصات دستگاه &mdash; نوبت دهی غیر حضوری بانک Banki v0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+          <link href='http://www.fontonline.ir/css/BYekan.css' rel='stylesheet' type='text/css'>
+<style>
+  *{
+  font-family:'BYekan',Sans-Serif;
+ }
+ h1,h2,h3,h4,h5,h6{
+    font-family:'BYekan',Sans-Serif !important;
+
+ }
+ p{
+    font-family:'BYekan',Sans-Serif;
+    font-size: 17px;
+ }
+ .caption-text{
+  color: #2980b9;
+ }
+ .wy-menu-vertical{
+  width: 291px !important;
+ }
+ .wy-nav-content{
+  max-width: 100% !important;
+ }
+ pre{
+   direction: ltr !important;
+ }
+</style>
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/syncthing.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="نوبت دهی غیر حضوری بانک Banki v0.1 documentation" href="../index.html"/>
+        <link rel="next" title="بررسی دستگاه" href="simul-overview.html"/>
+        <link rel="prev" title="سرعت سیستم چگونه است" href="../gotest-benchmark/intro-benchmark.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+  <style type="text/css">
+      .menui {
+      background: #fff;
+      transition: 0.6s ease;
+      transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
+      margin-top: 10px;
+      position: absolute;
+    }
+
+    .icon1 {
+      z-index: 999;
+      position: fixed;
+      display: block;
+      padding: 9px;
+      height: 32px;
+      width: 32px;
+      margin: 0px;
+      top: 0;
+      left: 2%;
+    }
+
+@media (min-width : 320px) {
+  .icon1{
+    top: 3%;
+    left: 7%;
+  }
+}
+
+    .mobilenav {
+      font-family: inherit;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 153, 153, 0.7);
+      opacity: 0.9;
+    }
+
+    .mobilenav li {
+      list-style-type: none;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .mobilenav li a {
+      font-size: 150%;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 300;
+      width: 100%;
+    }
+
+    .mobilenav li:first-child { margin-top: 60px; }
+
+    .top-animate {
+      background: #fff !important;
+      top: 13px !important;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .mid-animate { opacity: 0; }
+
+    .bottom-animate {
+      background: #fff !important;
+      top: 13px !important;
+      -webkit-transform: rotate(-225deg);
+      transform: rotate(-225deg);
+    }
+
+    .top-menu {
+      top: 5px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+
+    .mid-menu {
+      top: 13px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+
+    .bottom-menu {
+      top: 21px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+    
+  </style>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> نوبت دهی غیر حضوری بانک Banki
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="جست و جو" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">راه اندازی</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-run/server-run.html">راه اندازی پروژه</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-run/server-run.html#id2">راه اندازی سرور</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-run/server-run.html#id5">راه اندازی بانک ها</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-run/server-run.html#id6">راه اندازی بات</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">مقدمه</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html">به چه دردی میخورد ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id2">آیا استفاده از آن آسان است ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id3">سخنی با بانک داران</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id4">سیستم نوبت دهی چیست ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id5">سیستم نوبت‌دهی بی‌سیم</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id6">نوبت دهی پیامکی چیست؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id7">کیوسک نوبت دهی یا استند نوبت دهی چیست؟</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/about-project.html#id8">منابع</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">هسته - سرور</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/algorithm-overview.html">بررسی الگوریتم ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/server-overview1.html">بررسی سرور قسمت ۱</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#http-rest">از HTTP و REST چه می دانید ؟</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#rest">REST چیست ؟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#http">HTTP چیست ؟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id2">HTTP را جاسوسی کنید !</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#url">URL چیست ؟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id3">عملیات های مختلف HTTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#get">GET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#put">PUT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#delete">DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#post">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#rest-api">REST API چیست و چگونه کار می کند ؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#soap-restful">تفاوت وب سرویس های SOAP و  RESTful چیست؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#restful-rest">RESTful یا REST بودن یک وب سایت به چه معناست؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#json">مدل داده JSON</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id4">خصوصیات JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id5">منابع</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/server-overview2.html">بررسی سرور قسمت ۲</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-golang">آشنایی با زبان برنامه نویسی Go یا Golang</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview2.html#id2">چرا گو ?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go">Go یک زبان مدرن و همه منظوره است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id3">Go یک زبان (آزاد) و متن باز است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id4">Go یک زبان کامپایل شونده است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-syntax">Go و Syntax آشنا</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-procedural">Go یک زبان رویه‌ای است (Procedural)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id5">ابتدا یک توضیح ساده در باره کلاس‌ها و اشیا</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-class-struct">Go به جای Class از Struct استفاده می‌کند</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-composition">Go از Composition به جای وراثت استفاده می‌کند</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-static-type">Go یک زبان Static-Type است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-concurrency">Go و Concurrency:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview2.html#coroutine-thread">Coroutine‌ها چندین فرق اساسی با Thread‌ها دارند:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-functional">Go و قابلیت‌های Functional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#closure">توضیح درباره Closure ها:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id6">قابلیت‌های نداشته، قابلیت اصلی زبان Go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id7">نواقص زبان برنامه نویسی Go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id8">از کجا کار با Go را شروع کنیم؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id9">کاربرد زبان برنامه نویسی Go کجاست؟</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview2.html#id10">منابع</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/server-code-overview.html">بررسی کد سرور</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-code-overview.html#id2">ساختار پروژه</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-code-overview.html#id5">بررسی فایل های پروژه</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#logger-go">logger.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#error-go">error.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#handlers-go">handlers.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#repo-go">repo.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#router-go">router.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#routes-go">routes.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#todo-go">todo.go</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-code-overview.html#main-go">main.go</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">رابط کاربری - وبسایت</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-webapp/webapp-overview.html">نوبت دهی از طریق وبسایت چگونه است ؟</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id2">صفحه اصلی</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id3">ثبت نام</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id4">بررسی کد و ساختار</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id5">بررسی  ساختار پوشه ها</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id6">بررسی کد های مربوطه</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#index-html">index.html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#gotest-logup-html">gotest.logup.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">رابط کاربری - ربات</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-bot/bot-overview.html">نوبت دهی از طریق ربات</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-bot/bot-overview.html#id2">نوبت دهی از طریق ربات چگونه است ؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-bot/bot-overview.html#id4">بررسی کد</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-bot/bot-overview.html#colorer-py">Colorer.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-bot/bot-overview.html#telegrambot-py">telegrambot.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">گزارشات</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-benchmark/intro-benchmark.html">سرعت سیستم چگونه است</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-benchmark/intro-benchmark.html#id2">برنامه تست</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">دستگاه شبیه ساز نوبت دهی غیر حضوری</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">مشخصات دستگاه</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">اندازه و نوع بنده دستگاه</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">قطعات به کار رفته در دستگاه</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simul-overview.html">بررسی دستگاه</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simul-overview.html#id2">بررسی مدار</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simul-overview.html#id3">بررسی کد</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">نوبت دهی غیر حضوری بانک Banki</a>
+      </nav>
+
+
+
+      
+      <!-- left menu -->
+      <div class="wy-nav-content">
+        <div class="mobilenav"> 
+          <li><a target="_blank" href="#">Website</a></li> 
+          <li><a target="_blank" href="#">App</a></li> 
+          <li><a target="_blank" href="#">Telegram Bot</a></li> 
+        </div>
+        <a href="javascript:void(0)" class="icon1">
+          <div class="hamburger">
+            <div class="menui top-menu"></div>
+            <div class="menui mid-menu"></div>
+            <div class="menui bottom-menu"></div>
+          </div>
+        </a>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">مستندات</a> &raquo;</li>
+      
+    <li>مشخصات دستگاه</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/gotest-simulation/simul-information.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="simul-information-rst">
+<span id="id1"></span><h1>مشخصات دستگاه<a class="headerlink" href="#simul-information-rst" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>اندازه و نوع بنده دستگاه<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">پارامتر</th>
+<th class="head">توضیحات</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>طول</td>
+<td>۳۰</td>
+</tr>
+<tr class="row-odd"><td>عرض</td>
+<td>۱۰</td>
+</tr>
+<tr class="row-even"><td>ارتفاع</td>
+<td>۷</td>
+</tr>
+<tr class="row-odd"><td>جنس بدنه</td>
+<td>آهن</td>
+</tr>
+<tr class="row-even"><td>‍رنگ</td>
+<td>الکترواستاتیک</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>قطعات به کار رفته در دستگاه<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">توضیحات</th>
+<th class="head">تعداد</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>led</td>
+<td>۴</td>
+</tr>
+<tr class="row-odd"><td>دکمه</td>
+<td>۴</td>
+</tr>
+<tr class="row-even"><td>دکمه فشاری</td>
+<td>۱</td>
+</tr>
+<tr class="row-odd"><td>برچسب</td>
+<td>۸</td>
+</tr>
+<tr class="row-even"><td>‍بلند گو</td>
+<td>۱</td>
+</tr>
+<tr class="row-odd"><td>پایه</td>
+<td>۴</td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/front.JPG" src="../_images/front.JPG" />
+<img alt="../_images/front-left.JPG" src="../_images/front-left.JPG" />
+<img alt="../_images/left.JPG" src="../_images/left.JPG" />
+<img alt="../_images/right.JPG" src="../_images/right.JPG" />
+<img alt="../_images/back.JPG" src="../_images/back.JPG" />
+<img alt="../_images/top.JPG" src="../_images/top.JPG" />
+<img alt="../_images/top-door.JPG" src="../_images/top-door.JPG" />
+<img alt="../_images/main.JPG" src="../_images/main.JPG" />
+<img alt="../_images/main-door.JPG" src="../_images/main-door.JPG" />
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="simul-overview.html" class="btn btn-neutral float-right" title="بررسی دستگاه" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../gotest-benchmark/intro-benchmark.html" class="btn btn-neutral" title="سرعت سیستم چگونه است" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jul 09, 2018.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    $(".icon1").click(function () {
+      $(".mobilenav").fadeToggle(500);
+      $(".top-menu").toggleClass("top-animate");
+      $(".mid-menu").toggleClass("mid-animate");
+      $(".bottom-menu").toggleClass("bottom-animate");
+    });
+  });
+</script>
+
+</body>
+</html>
