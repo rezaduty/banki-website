@@ -86,7 +86,7 @@ body {
 }
 
 body {
-    font-family: 'Lalezar', sans-serif;
+    font-family: 'Vazir-Light', sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 1.8;
@@ -1029,9 +1029,9 @@ canvas {
 
 .persian-banki-word{
   width: 10%;
-  position: relative;
-  right: 48%;
-  top: 4.3rem;
+      position: relative;
+      right: 40%;
+      top: 3.3rem;
 }
 .header-logo{
   width: 10%;
@@ -1042,10 +1042,10 @@ canvas {
 
 @media only screen and (max-width: 768px) {
 .persian-banki-word{
-  width: 10%;
-  position: relative;
-  right: 19%;
-  top: 7.3rem;
+  width: 24%;
+    position: relative;
+    right: -1%;
+    top: -2.7rem;
   }
   +
 }
