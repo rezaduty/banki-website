@@ -1,0 +1,14 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}

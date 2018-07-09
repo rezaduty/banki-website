@@ -1,0 +1,829 @@
+<html>
+  <head>
+
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">-->
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+ 
+.myLocation{
+
+    width: 27px;
+    height: 5%;
+    background: white;
+    position: absolute;
+    content: list-item;
+    top: 44%;
+    left: 12px;
+    padding-top: 8px;
+    text-align: center;
+    cursor: pointer;
+
+}
+</style>
+
+    <link href='http://www.fontonline.ir/css/BMitra.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+
+<script type="text/javascript">
+  var url = "http://gotest.com:8088/banks";
+  var turn_number;
+  var a=0;
+  function getUser(){
+    $.ajax({
+    url:"http://gotest.com:8088/users/"+getCookie("password"),
+    datatype:'json',
+    type:'get',
+    async: false,
+    success:function(data){
+        $(data).each(function(index,value){
+              turn_number = value['turn_number'];
+              });
+            }
+        }); 
+
+    return turn_number;
+  }
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+  }
+
+
+
+  function get(bankid){
+    // TODO check auth and get simple queue
+    var user = getCookie("password");
+    if(user>=4){
+      var person = {
+                bank_id: bankid,
+                phone_number:user
+             }
+
+      // TODO 
+      $.ajax({
+            url: 'http://gotest.com:8088/addqueue/'+bankid+'/'+user,
+            type: 'post',
+            dataType: 'json',
+            crossDomain: true,
+            success: function (data) {
+                // TODO
+                console.log("Success Add Queue "+bankid+" "+user);
+                document.cookie = "bankid="+ bankid + ";path=/";
+                //setCookie(txtName,txtPhone);
+                //$('#loadingDiv').hide();
+                //$('#error_success').hide();
+                //$('#hidden_success').hide();
+                //$('#success').show();
+                alert("با موفقیت ثبت شد.")
+                window.location.replace("http://gotest.com/gotest/index.html");
+            },
+            error: function (response) {
+             //Handle error
+             console.log("Error Add Queue");
+             alert("با عرض پوزش شما قبلا نوبت گرفته اید.")
+             //$("#loadingDiv").hide();
+             //$('#error_success').show();
+      },
+            data: JSON.stringify(person)
+        });
+
+
+    }else{
+      alert("لطفا ابتدا وارد شوید.");
+    }
+   
+  }
+
+function checkCookie() {
+      var username = getCookie("username");
+      var password = getCookie("password");
+      var bankid = getCookie("bankid");
+      var bankx = getCookie("bankx");
+      var banky = getCookie("banky");
+      if (username != "") {
+          $("#before_signin").hide();
+          $("#after_signin").show();
+          if(bankid !=""){
+            zoomin(bankx,banky);
+          }
+      } else {
+          //TODO
+      }
+  }
+function deleteCookie() {
+  document.cookie = "username" +'=; Path=/;';
+  document.cookie = "password" +'=; Path=/;';
+  document.cookie = "bankid" +'=; Path=/;';
+  document.cookie = "bankx" +'=; Path=/;';
+  document.cookie = "banky" +'=; Path=/;';
+
+}
+  function readCookie() {
+      var nameEQ = "username" + "=";
+      var x = getCookie("bankx");
+
+      var y = getCookie("banky");
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) == 0){
+            document.getElementById("welcome_by_username").innerHTML = "سلام <p style='color:white;display:inline;text-shadow:1px 0px 2px white;direction:rtl;font-size:25px;'>"+c.substring(nameEQ.length,c.length)+"</p><br>";
+          if(x !=""){
+            $("#welcome_by_username").append("<a href='#' onclick=zoomin("+x+","+y+")>نوبت من </a>");
+            
+          }
+
+
+            return c.substring(nameEQ.length,c.length);
+          } 
+      }
+      return null;
+  }
+
+
+  $(document).ready(function(){
+
+
+
+
+
+
+  
+  
+
+
+  function setCookie(cname, cvalue) {
+    //var d = new Date();
+    //d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    //var expires = "expires="+ d.toUTCString();
+    document.cookie = "username="+ cname + ";path=/";
+    document.cookie = "password="+ cvalue + ";path=/";
+  }
+
+$("#signin").click(function(){
+    checkUser();
+
+});
+
+
+  function checkUser(){
+
+    var username = $("#username").val();
+    var password = $("#password").val();
+
+    $.ajax({
+            url: 'http://gotest.com:8088/users/'+password,
+            type: 'get',
+            dataType: 'json',
+            crossDomain: true,
+            success: function (data) {
+                // TODO
+                console.log("Success Read User");
+                if(data!=""){
+                    console.log("Sign In Ok");
+                    setCookie(username,password);
+                    window.location.replace("./index.html");
+                }else{
+                    console.log("Not Register User");
+                    window.location.replace("./gotest.logup.html");
+                }
+                
+            },
+            error: function (response) {
+             //Handle error
+             console.log("Error Read User");
+             alert("خطایی رخ داده است.");
+             
+      }
+        });
+
+
+  }
+    
+
+    $.getJSON(url, function(data) {
+    //data is the JSON string
+    /*
+      Not best way for alphabetic sort
+
+      for example pasargad variable:
+        check once bank with `پاسراگاد` name then
+          Add `<div class="list-title">پاسارگاد</div>` to start string
+         or no 
+          pass
+
+    */ 
+    // categorized by bank 
+    var jsonStr = JSON.stringify(data);
+    var htmlText = '';
+    var day,maskan,melli,saderat,other;
+
+            for ( var key in data ) {
+              if (String(data[key].name).startsWith("دی")) {
+                if (!day){
+                  htmlText += '<div class="list-title">دی</div>';
+                  day = true;
+                }
+  
+                htmlText += '<a onclick="zoomin('+data[key].x+','+data[key].y+')"><div class="div-conatiner"><div class="list-item"><div class="list-item-icon"></div><div class="list-item-text"><li>';
+                htmlText += '<p class="p-bank-list"> بانک: ' + data[key].name + '</p>';
+                htmlText += '<p class="p-bank-list"> شعبه: ' + data[key].branch + '</p>';
+                htmlText += '<p class="p-bank-list"> آدرس: ' + data[key].address + '</p></li></a></div></div><hr>';
+                htmlText += '</div>';
+              }
+              
+              else if (String(data[key].name).startsWith("مسکن")) {
+                if(!maskan){
+                  htmlText += '<div class="list-title">مسکن</div>';
+                  maskan = true;
+                }
+  
+                htmlText += '<a onclick="zoomin('+data[key].x+','+data[key].y+')"><div class="div-conatiner"><div class="list-item"><div class="list-item-icon"></div><div class="list-item-text"><li>';
+                htmlText += '<p class="p-bank-list"> بانک: ' + data[key].name + '</p>';
+                htmlText += '<p class="p-bank-list"> شعبه: ' + data[key].branch + '</p>';
+                htmlText += '<p class="p-bank-list"> آدرس: ' + data[key].address + '</p></a></div></div><hr>';
+                htmlText += '</div>';
+              }
+
+              else if (String(data[key].name).startsWith("ملی")) {
+                if(!melli){
+                  htmlText += '<div class="list-title">ملی</div>';
+                  melli = true;
+                }
+  
+                htmlText += '<a onclick="zoomin('+data[key].x+','+data[key].y+')"><div class="div-conatiner"><div class="list-item"><div class="list-item-icon"></div><div class="list-item-text"><li>';
+                htmlText += '<p class="p-bank-list"> بانک: ' + data[key].name + '</p>';
+                htmlText += '<p class="p-bank-list"> شعبه: ' + data[key].branch + '</p>';
+                htmlText += '<p class="p-bank-list"> آدرس: ' + data[key].address + '</p></a></div></div><hr>';
+                htmlText += '</div>';
+              }
+
+              else if (String(data[key].name).startsWith("صادرات")) {
+                if(!saderat){
+                  htmlText += '<div class="list-title">صادرات</div>';
+                  saderat = true;
+                }
+  
+                htmlText += '<a onclick="zoomin('+data[key].x+','+data[key].y+')"><div class="div-conatiner"><div class="list-item"><div class="list-item-icon"></div><div class="list-item-text"><li>';
+                htmlText += '<p class="p-bank-list"> بانک: ' + data[key].name + '</p>';
+                htmlText += '<p class="p-bank-list"> شعبه: ' + data[key].branch + '</p>';
+                htmlText += '<p class="p-bank-list"> آدرس: ' + data[key].address + '</p></a></div></div><hr>';
+                htmlText += '</div>';
+              }
+              else{
+                if(!other){
+                  htmlText += '<div class="list-title">متفرقه</div>';
+                  other = true;
+                }
+  
+                htmlText += '<a onclick="zoomin('+data[key].x+','+data[key].y+')"><div class="div-conatiner"><a href=""><div class="list-item"><div class="list-item-icon"></div><div class="list-item-text"><li>';
+                htmlText += '<p class="p-bank-list"> بانک: ' + data[key].name + '</p>';
+                htmlText += '<p class="p-bank-list"> شعبه: ' + data[key].branch + '</p>';
+                htmlText += '<p class="p-bank-list"> آدرس: ' + data[key].address + '</p></a></div></div><hr>';
+                htmlText += '</div>';
+              }
+                
+            }
+
+            $('.list-item-container').append(htmlText);
+              
+
+    
+checkCookie();
+  readCookie();
+    console.log(data)
+    });
+  });
+
+
+  
+ 
+</script>
+
+    <link rel="stylesheet" type="text/css" href="http://maps.dev3.develag.com/css/map.css">
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWpaeuL22IEgrXofbGGLw9YXj1i9ydHtg"></script> 
+
+
+    <script src="menu/gotest-menu.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="menu/gotest-menu.css">
+
+    <script src="js/gotest.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/gotest.css">
+
+  
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+  <!--start top menu-->
+
+<div class="top-bar" id="top-bar">
+  <div class="bar">
+    <button class="navbox-trigger" id="navbox-trigger"><i class="fa fa-lg fa-th"></i></button>
+  </div>
+
+
+  <div id="before_signin" class="navbox">
+        <br><br>
+        <div class="material-textbox" id="first-name-input">
+        <input id="username" class="material-input" required="required" />
+        <span class="material-label">نام کاربری</span>
+        </div>
+        <br><br>
+        <div class="material-textbox" id="first-name-input">
+        <input id="password" class="material-input" required="required" />
+        <span class="material-label">شماره تلفن</span>
+        </div>
+        <br>
+        <div class="navbox-tiles">
+          <a style="width: 98%;margin-bottom: 4%;" id="signin" class="tile"><div class="icon"><i style="color: white;" class="fa fa-sign-in"></i></div><span style="color: white;" class="title">ورود</span></a><!--
+          <a href="#" style="color: #3498db;font-size: 24px;">فراموشی کلمه عبور</a>
+          <br><br>-->
+          <a class="tile" href="gotest.logup.html" style="width: 98%"><div class="icon"><i class="fa fa-user-plus"></i></div><span class="title">ثبت نام</span></a>
+        </div>
+  </div>
+
+
+<!-- after sign in -->
+   <div id="after_signin" class="navbox" style="display: none;">
+        <p style="color: #3498db;margin-bottom: -24px;font-size: 25px;direction: rtl;padding-top: 5%;text-align: center;" id="welcome_by_username"></p><br>
+        <a style="color: #b7ddf7;margin-left: 50%;direction: rtl;font-size: 25px;" href="" onclick="deleteCookie()">خروج</a>
+        <br><br>
+        
+  </div>
+
+
+
+</div>
+  <!--end top menu-->
+
+
+
+  <a class="scrollbar-show-hide rightarrowdiv slide-right-left js-rightplanel" href="javascript:void(0);" onclick="rightscroll();" style=""><span class="rightarrow"></span></a>
+<a class="scrollbar-show-hide leftarrowdiv hide" href="javascript:void(0);" onclick="leftscroll('main');"><span class="leftarrow"></span></a>
+
+<div id="directionsPanel" class="direction-right-block slide-right-left js-rightplanel directionsPanel" style="right: 0px;">
+  <div class="pr clearfix">
+
+
+<script>
+function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li2 = ul.getElementsByTagName('div');
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    /*
+      li[i].getElementsByTagName("p")[i];
+    */
+    for (i = 0; i < li.length; i++) {
+        aـcity = li[i].getElementsByTagName("p")[2];
+        a_bank_name = li[i].getElementsByTagName("p")[0];
+
+        if (aـcity.innerHTML.toUpperCase().indexOf(filter) > -1 || a_bank_name.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+
+        } else {
+            li[i].style.display = "none";
+            
+        }
+    }
+}
+</script>
+
+<!--search-->
+
+  <div class="grid">
+
+    <form class="search"> 
+
+      <div class="form__field">
+        <input type="search" onkeyup="myFunction()" id="myInput" name="search" style="direction: rtl;" placeholder="جست و جو" class="form__input">
+      </div>
+
+    </form>
+  </div>
+  <br>
+
+  <div class="list">
+  
+<ul id="myUL">
+  <div class="list-item-container">
+    
+  </div>
+  </ul>
+</div>
+
+<!--
+ <div class="direction-right-block-in clearfix">
+      <div class="direction-top-block clearfix">
+        <div class="clearfix">
+          <p class="menu-direction hide"><a href="#" title="Menu">Menu</a></p>
+          <ul class="direction-list clearfix">
+            <li class="snowflake fa fa-snowflake-o" id=""><a href="javascript:void(0);" onclick=""></a></li>
+            <li class="zone travlemode fa fa-map-marker" id=""><a href="javascript:void(0);" onclick=""></a></li>
+            
+            <li class="travel travelmode" id="travelmode"><a href="javascript:void(0);" onclick="setdirectionstravel('travelmode');">Travel mode</a></li>
+            <li class="drive travelmode" id="driving"><a href="javascript:void(0);" onclick="setdirectionstravel('driving');">Drive</a></li>
+            <li class="train travelmode" id="transit"><a href="javascript:void(0);" onclick="setdirectionstravel('transit');">Train</a></li>
+            <li class="walk travelmode" id="walking"><a href="javascript:void(0);" onclick="setdirectionstravel('walking');">Walk</a></li>
+            
+            <li class="cycle travelmode" id="bicycling"><a href="javascript:void(0);" onclick="setdirectionstravel('bicycling');">Cycle</a></li>
+          </ul>
+        </div>
+        <div class="form-border-bot clearfix">
+          <form class="form-direction clearfix ng-pristine ng-valid">
+            <div class="input-block">
+              <p class="clearfix path-from"><label><span>From</span></label><input type="text" onfocus="routedirection('search','','');" onchange="routedirection('search','','');" value="chennai" id="dirSource" placeholder="Enter a location" autocomplete="off"><span class="bg-search">search</span></p>
+              <p class="clearfix path-to"><label><span>To</span></label><input type="text" value="" onfocus="routedirection('search','','');" onchange="routedirection('search','','');" id="dirDestination" placeholder="Enter a location" autocomplete="off"><span class="bg-search">search</span></p>
+            </div>
+            <div class="up-down-block">
+              <p onclick="swap();" class="btn-up-down"><span>up and down</span></p>
+            </div>
+            <input id="directionstravel" type="hidden" value="driving">
+          </form>
+        </div>
+      </div>
+
+
+
+
+</div>
+-->
+      <div id="panel" class="route-map-rgt" style="direction: ltr;">
+      </div>
+
+
+    
+  </div>
+</div>
+
+<div id="map" style="border: 2px solid #3872ac;"></div>
+
+    <script type="text/javascript">
+
+/*
+
+Url Set
+
+&
+
+Icon set 
+
+https://cdn1.iconfinder.com/data/icons/business-bicolor-4/512/bank_location-32.png
+
+*/ 
+var map;
+var icon = "https://cdn1.iconfinder.com/data/icons/business-bicolor-4/512/bank_location-32.png";
+//alert(window.url)
+var json = window.url;
+var infowindow = new google.maps.InfoWindow();
+
+var map,lati,lon
+
+
+function initialize() {
+
+    var mapProp = {
+        center: new google.maps.LatLng(32.8220323,55.7591143), //ZOOM ON IRAN 
+        zoom: 5,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: true,
+          mapTypeControlOptions: {
+              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+              position: google.maps.ControlPosition.BOTTOM_CENTER
+          },
+          zoomControl: true,
+          zoomControlOptions: {
+              position: google.maps.ControlPosition.LEFT_CENTER
+          },
+          scaleControl: true,
+          streetViewControl: true,
+          streetViewControlOptions: {
+              position: google.maps.ControlPosition.LEFT_CENTER
+          },
+          fullscreenControl: true,
+          fullscreenControlOptions: {
+            position: google.maps.ControlPosition.LEFT_TOP
+
+          }
+
+          
+    };
+
+    map = new google.maps.Map(document.getElementById("map"), mapProp);
+
+    $.getJSON(json, function(json1) {
+      
+   /* var json1 = {
+        "universities": [
+            {
+                "title": "Aberystwyth University",
+                "website": "www.aber.ac.uk",
+                "phone": "+44 (0)1970 623 111",
+                "lat": 52.415524,
+                "lng": -4.063066},
+            {
+                "title": "Bangor University",
+                "website": "www.bangor.ac.uk",
+                "phone": "+44 (0)1248 351 151",
+                "lat": 53.229520,
+                "lng": -4.129987},
+            {
+                "title": "Cardiff Metropolitan University",
+                "website": "www.cardiffmet.ac.uk",
+                "phone": "+44 (0)2920 416 138",
+                "lat": 51.482708,
+                "lng": -3.165881}
+        ]
+    };*/
+    $.each(json1, function (key, data) {
+
+//  For x y pin map
+        var latLng = new google.maps.LatLng(data.x, data.y);
+        var d = parseInt(data.turns_number)-parseInt(data.active_turns_number)
+        var marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            icon: icon,
+            title: "بانک: "+data.name + "\nتعداد افراد داخل صف: "+d+"\n آدرس: " + data.address
+        });
+
+
+
+
+
+
+
+
+
+
+
+       
+        var bank_id = data.bank_id;
+        var details;
+
+        if(getCookie("password")>4){
+
+            if(getCookie("bankid")==bank_id){
+              $.when(getUser()).done(function(turn_number){
+                var res = String((parseInt(turn_number)-data.active_turns_number)-1);
+              details = "بانک: "+data.name +"<hr>"
+                      +"نوبت شما: "+turn_number+ "<br> مانده به شما: "+ res +"<hr><br> آدرس: " + data.address ;
+              
+              //a=1;
+              });
+              document.cookie = "bankx="+ data.x + ";path=/";
+              document.cookie = "banky="+ data.y + ";path=/";
+              
+            }else{
+              details  = "بانک: "+data.name + "<br>تعداد افراد داخل صف: "+data.active_turns_number+"<hr><br> آدرس: " + data.address ;
+            }
+          }
+          else{
+            details  = "بانک: "+data.name + "<br>تعداد افراد داخل صف: "+data.active_turns_number+"<hr><br> آدرس: " + data.address ;
+          }
+
+
+        bindInfoWindow(marker, map, infowindow, details,bank_id);
+       
+
+    });
+
+});
+}
+
+ // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+        var marker = new google.maps.Marker({
+                  position: pos,
+                  icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: 3,
+                          strokeWeight:2,
+                          strokeColor:"#1976D2"
+                  },
+                  map: map
+                });
+
+           /* infowindow.setPosition(pos);
+            infowindow.setContent('aaaaa');
+            infowindow.open(map);*/
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infowindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infowindow, map.getCenter());
+        }
+      
+
+     
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infowindow.setPosition(pos);
+        infowindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infowindow.open(map);
+      }
+
+function zoomin(lat, lng) {
+
+  /*
+   parseInt not correct work
+   initialize() for find `map` object
+  */
+      initialize()
+      var pt = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
+      map.setCenter(pt);
+      map.setZoom(18);
+    }
+
+function bindInfoWindow(marker, map, infowindow, strDescription,bank_id) {
+  
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.setContent("<div class='details'><a onclick='get("+ bank_id +")' href='#' style='color:#000000;text-shadow:1px 1px 1px #9e9e9e;float:left;'><i class='em em-ticket'></i></a>"+strDescription+"</div>");
+        infowindow.open(map, marker);
+    });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+
+
+
+
+
+
+
+
+      /*from new_map.js */
+
+
+
+function myLocation(){
+
+// not best work because get location in chrome 
+ $.getJSON("http://ip-api.com/json", function(data) {
+            var table_body = "";
+            $.each(data, function(k, v) {
+                
+                if(k == "lat"){
+                  lati = v
+
+                }
+                if(k == "lon"){
+                  lon = v
+                }
+                if(lati !="" && lon !=""){
+
+                var pt = new google.maps.LatLng(lati, lon);
+                var pos = {
+                  lat: lati,
+                  lng: lon
+                };
+
+                var marker = new google.maps.Marker({
+                position: pos,
+                icon: {
+                  path: google.maps.SymbolPath.CIRCLE,
+                  scale: 3,
+                        strokeWeight:2,
+                        strokeColor:"#1976D2"
+                },
+                map: map
+              });
+
+
+
+                map.setCenter(pt);
+                map.setZoom(16);
+                }
+            });
+            
+        });
+
+
+
+  
+}
+
+function rightscroll() {
+  scrollhide = 'yes';
+  $(".leftarrowdiv").removeClass('hide');
+  $(".js-rightplanel").animate({
+      "right": "-400px"
+    }, 500,
+    function() {
+      $(".rightarrowdiv").addClass('hide');
+    });
+  $('.footer-logo, #btn-map, #btn-satellite').animate({
+    'margin-right': '0px'
+  }, 500);
+}
+
+function leftscroll() {
+  $(".leftarrowdiv").addClass('hide');
+  $(".js-rightplanel").animate({
+      "right": "0px"
+    }, 500,
+    function() {
+      $(".rightarrowdiv").attr("style", "");
+      $(".rightarrowdiv").removeClass('hide');
+    });
+  var screensize = $(window).width();
+  var rightplane = $('.slide-right-left').width();
+  $('.footer-logo').animate({
+    'margin-right': (rightplane / 2) + 'px'
+  }, 300);
+  $('#btn-map, #btn-satellite').animate({
+    'margin-right': rightplane + 'px'
+  }, 125);
+}
+
+function setdirectionstravel(travelmode) {
+  $('#directionstravel').val(travelmode);
+  $('.travelmode').removeClass('active');
+  $('#' + travelmode).addClass('active');
+  //routedirection('search','',''); set map and choice of travel directions
+}
+
+function swap() {
+  var dirSource = $('#dirSource').val();
+  var dirDestination = $('#dirDestination').val();
+  $('#dirSource').val(dirDestination);
+  $('#dirDestination').val(dirSource);
+  routedirection('search', '', '');
+}
+/* end new_map.js */
+
+$('.direction-list li.fa').on('mouseover', function() {
+  $(this).css('opacity', 1.0)
+})
+$('.direction-list li.fa').on('mouseout', function() {
+
+  if ($(this).hasClass('active')) {
+
+  } else {
+    $(this).css('opacity', 0.5)
+  }
+})
+
+$('.direction-list li.fa').on('click', function() {
+  $('#directionsPanel .active').removeClass('active')
+  $('.direction-list li.fa').css('opacity', '0.5')
+  $(this).addClass('active');
+  $(this).css('opacity', '1.0')
+})
+
+$('.travel a, .drive a, .walk a, .cycle a').on('click', function() {
+  $('.direction-list li.fa').css('opacity', '0.5');
+  $('.direction-list li.fa').removeClass('active');
+})
+    </script>
+    <div class="myLocation">
+      <i class="fa fa-user-o" onclick="myLocation()" aria-hidden="true"></i>
+    </div>
+  </body>
+</html>
