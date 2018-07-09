@@ -1,0 +1,67 @@
+.. _javascript-print-page:
+
+How to print the current page
+===================
+
+Example add to tag
+--------------------
+
+
+
+.. code-block:: javascript
+
+	<html>
+	   <head>
+	      
+	      <style type="css">
+	      	.print_web_page{
+	      	background-color:red;
+	      	width:400px;
+	      	height:400px;
+	      	}
+	      </style>
+	      
+	   </head>
+	   
+	   <body>
+	   
+	      <div class="print_web_page" onclick="window.print();"></div>
+	   
+	   </body>
+	</html>
+
+
+Example add to head
+--------------------
+
+
+.. code-block:: javascript
+
+	<html>
+	   <head>
+	      
+	      <style type="css">
+	      	.print_web_page{
+	      	background-color:red;
+	      	width:400px;
+	      	height:400px;
+	      	}
+	      </style>
+	      <script>
+	      	function print_web_page(){
+	      		window.print();
+	      	}
+	      </script>
+	      
+	   </head>
+	   
+	   <body>
+	   
+	      <div class="print_web_page" onclick="print_web_page();">Print</div>
+	   
+	   </body>
+	</html>
+
+Resource
+~~~~~~~~~
+w3schools.com

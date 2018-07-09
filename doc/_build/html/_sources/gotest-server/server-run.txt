@@ -1,0 +1,26 @@
+.. _server-run:
+
+راه اندازی پروژه
+===================
+
+ساختار پروژه 
+------------
+
+پروژه از پروژه متن باز دیگری که در `این <https://thenewstack.io/make-a-restful-json-api-go/>`_ لینک درباره آن صحبت شده است ساخته شده است
+
+و همچنین از v۹ این پروژه fork شده است که در تصویر ساختار آن را مشاهده میکنید
+
+`لینک گیت هاب  <https://github.com/corylanou/tns-restful-json-api/tree/master/v9/>`_
+
+.. image:: static/img/tns_v9.png
+
+پس از تغیرات و به خوانایی بهتر ساختار پروژه به این شکل تغیر کرد
+
+.. image:: static/img/folder_structure.jpg
+
+
+
+منابع
+~~~~
+
+`hami-r.com <http://www.hami-r.com/blog/post/311_REST_API_%DA%86%DB%8C%D8%B3%D8%AA_%D9%88_%DA%86%DA%AF%D9%88%D9%86%D9%87_%DA%A9%D8%A7%D8%B1_%D9%85%DB%8C_%DA%A9%D9%86%D8%AF_%D8%9F/>`_

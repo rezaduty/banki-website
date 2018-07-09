@@ -1,0 +1,104 @@
+.. _javascript-regExp:
+
+Regular Expressions and RegExp Object
+===================
+
+A regular expression is an object that describes a pattern of characters.
+
+The JavaScript ``RegExp`` class represents regular expressions, and both String and ``RegExp`` define methods that use regular expressions to perform powerful pattern-matching and search-and-replace functions on text.
+
+Syntax
+-------
+A regular expression could be defined with the ``RegExp ()`` constructor, as follows −
+
+.. code-block:: javascript
+
+	var pattern = new RegExp(pattern, attributes);
+
+	or simply
+
+	var pattern = /pattern/attributes;
+
+Here is the description of the parameters −
+
+	→ ``pattern`` − A string that specifies the pattern of the regular expression or another regular expression.
+
+	→ ``attributes`` − An optional string containing any of the "g", "i", and "m" attributes that specify global, case-insensitive, and multiline matches, respectively.
+
+Brackets
+-------------
+
+Brackets ([]) have a special meaning when used in the context of regular expressions. They are used to find a range of characters.
+
+.. image:: static/img/JavaScript-The-Regular-Expressions-and-RegExp-Object.png
+
+
+The ranges shown above are general; you could also use the range [0-3] to match any decimal digit ranging from 0 through 3, or the range [b-v] to match any lowercase character ranging from ``b`` through ``v``.
+
+
+
+Quantifiers
+-------------
+
+The frequency or position of bracketed character sequences and single characters can be denoted by a special character. Each special character has a specific connotation. The +, *, ?, and $ flags all follow a character sequence.
+
+
+.. image:: static/img/JavaScript-The-Regular-Expressions-and-RegExp-Object2.png
+
+
+Examples
+----------
+
+Following examples explain more about matching characters.
+
+.. image:: static/img/JavaScript-The-Regular-Expressions-and-RegExp-Object3.png
+
+Literal characters
+--------------------
+
+.. image:: static/img/JavaScript-The-Regular-Expressions-and-RegExp-Object4.png
+
+
+Metacharacters
+----------------
+
+A metacharacter is simply an alphabetical character preceded by a backslash that acts to give the combination a special meaning.
+
+For instance, you can search for a large sum of money using the '\d' metacharacter: ``/([\d]+)000/``, Here ``\d`` will search for any string of numerical character.
+
+The following table lists a set of metacharacters which can be used in PERL Style Regular Expressions.
+
+.. image:: static/img/JavaScript-The-Regular-Expressions-and-RegExp-Object5.png
+
+
+
+Modifiers
+-----------
+
+.. image:: static/img/JavaScript-The-Regular-Expressions-and-RegExp-Object6.png
+
+
+Several modifiers are available that can simplify the way you work with ``regexps``, like case sensitivity, searching in multiple lines, etc.
+
+RegExp Properties
+------------------
+
+.. image:: static/img/JavaScript-The-Regular-Expressions-and-RegExp-Object7.png
+
+
+In the following sections, we will have a few examples to demonstrate the usage of RegExp properties.
+
+RegExp Methods
+---------------
+
+Here is a list of the methods associated with RegExp along with their description.
+
+.. image:: static/img/JavaScript-The-Regular-Expressions-and-RegExp-Object8.png
+
+
+In the following sections, we will have a few examples to demonstrate the usage of RegExp methods.
+
+
+Resource
+~~~~~~~~~
+tutorialspoint.com

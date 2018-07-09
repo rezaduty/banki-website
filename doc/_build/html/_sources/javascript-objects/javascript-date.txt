@@ -1,0 +1,93 @@
+.. _javascript-date:
+
+JavaScript - The Date Object
+===================
+
+The Date object is a datatype built into the JavaScript language. Date objects are created with the ``new Date( )`` as shown below.
+
+Once a Date object is created, a number of methods allow you to operate on it. Most methods simply allow you to get and set the year, month, day, hour, minute, second, and millisecond fields of the object, using either local time or UTC (universal, or GMT) time.
+
+The ECMAScript standard requires the Date object to be able to represent any date and time, to millisecond precision, within 100 million days before or after 1/1/1970. This is a range of plus or minus 273,785 years, so JavaScript can represent date and time till the year 275755.
+
+Syntax
+--------
+
+You can use any of the following syntaxes to create a Date object using Date() constructor.
+
+.. code-block:: javascript
+
+	new Date( )
+	new Date(milliseconds)
+	new Date(datestring)
+	new Date(year,month,date[,hour,minute,second,millisecond ])
+
+.. Note:: Parameters in the brackets are always optional.
+
+Here is a description of the parameters −
+
+	→ ``No Argument`` − With no arguments, the Date() constructor creates a Date object set to the current date and time.
+
+	→ ``milliseconds`` − When one numeric argument is passed, it is taken as the internal numeric representation of the date in milliseconds, as returned by the getTime() method. For example, passing the argument 5000 creates a date that represents five seconds past midnight on 1/1/70.
+
+	→ ``datestring`` − When one string argument is passed, it is a string representation of a date, in the format accepted by the Date.parse() method.
+
+	→ ``7 agruments`` − To use the last form of the constructor shown above. Here is a description of each argument:
+
+		→ ``year`` − Integer value representing the year. For compatibility (in order to avoid the Y2K problem), you should always specify the year in full; use 1998, rather than 98.
+
+		→ ``month`` − Integer value representing the month, beginning with 0 for January to 11 for December.
+
+		→ ``date`` − Integer value representing the day of the month.
+
+		→ ``hour`` − Integer value representing the hour of the day (24-hour scale).
+
+		→ ``minute`` − Integer value representing the minute segment of a time reading.
+
+		→ ``second`` − Integer value representing the second segment of a time reading.
+
+		→ ``millisecond`` − Integer value representing the millisecond segment of a time reading.
+
+Date Properties
+-----------------
+
+Here is a list of the properties of the Date object along with their description.
+
+=============  =============
+Property        Description
+=============  =============
+`constructor`    Returns a reference to the Boolean function that created the object.
+`prototype`      The prototype property allows you to add properties and methods to an object.
+=============  =============
+
+In the following sections, we will have a few examples to demonstrate the usage of different Date properties.
+
+Date Methods
+---------------
+
+Here is a list of the methods used with Date and their description.
+
+.. image:: static/img/JavaScript-The-Date-Object.png
+
+Converts a date to a string, using the universal time convention.
+
+Date Static Methods
+------------------------
+
+In addition to the many instance methods listed previously, the Date object also defines two static methods. These methods are invoked through the Date() constructor itself.
+
+=============  =============
+Method      	Description
+=============  =============
+Date.parse()    Parses a string representation of a date and time and returns the internal millisecond representation of that date.
+Date.UTC()      Returns the millisecond representation of the specified UTC date and time.
+
+=============  =============
+
+
+In the following sections, we will have a few examples to demonstrate the usages of Date Static methods.
+
+
+
+Resource
+~~~~~~~~~
+tutorialspoint.com

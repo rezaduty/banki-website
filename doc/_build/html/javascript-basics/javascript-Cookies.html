@@ -1,0 +1,995 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JavaScript and Cookies &mdash; Javascript Learning v0.1 documentation</title>
+  
+
+  
+  
+    <!--<link rel="shortcut icon" href="../_static/favicon.png"/>-->
+    <link rel="shortcut icon" href="https://camo.githubusercontent.com/4f455d6ec9b49d8d79e1a9ea922fdf10109717e0/68747470733a2f2f7261772e6769746875622e636f6d2f766f6f646f6f74696b69676f642f6c6f676f2e6a732f6d61737465722f73706563696669632d757365732f62616467655f6a732d7374726963742e706e67"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/syncthing.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Javascript Learning v0.1 documentation" href="../index.html"/>
+        <link rel="next" title="JavaScript - Page Redirection" href="javascript-Page-Redirect.html"/>
+        <link rel="prev" title="JavaScript - Events" href="javascript-Events.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+  <style type="text/css">
+      .menui {
+      background: #fff;
+      transition: 0.6s ease;
+      transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
+      margin-top: 10px;
+      position: absolute;
+    }
+
+    .icon1 {
+      z-index: 999;
+      position: fixed;
+      display: block;
+      padding: 9px;
+      height: 32px;
+      width: 32px;
+      margin: 0px;
+      top: 0;
+      right: 1%;
+    }
+
+@media (min-width : 320px) {
+  .icon1{
+    top: 12%;
+  }
+}
+
+    .mobilenav {
+      font-family: inherit;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 153, 153, 0.7);
+      opacity: 0.9;
+    }
+
+    .mobilenav li {
+      list-style-type: none;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .mobilenav li a {
+      font-size: 150%;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 300;
+      width: 100%;
+    }
+
+    .mobilenav li:first-child { margin-top: 60px; }
+
+    .top-animate {
+      background: #fff !important;
+      top: 13px !important;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .mid-animate { opacity: 0; }
+
+    .bottom-animate {
+      background: #fff !important;
+      top: 13px !important;
+      -webkit-transform: rotate(-225deg);
+      transform: rotate(-225deg);
+    }
+
+    .top-menu {
+      top: 5px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+
+    .mid-menu {
+      top: 13px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+
+    .bottom-menu {
+      top: 21px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+  </style>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> Javascript Learning
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/getting-started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/getting-started.html#what-is-javascript">What is Javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/getting-started.html#why-use-javascript">Why use javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/getting-started.html#why-study-javascript">Why Study JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/getting-started.html#advantages">Advantages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/getting-started.html#disadvantages">Disadvantages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/getting-started.html#javascript-references">JavaScript References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/getting-started.html#javascript-quiz-test">JavaScript Quiz Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/getting-started.html#how-to-use">How to use</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/getting-started.html#for-uses-javascript-with-2-method">For uses javascript with 2 method :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/getting-started.html#external-link">1-External link</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/getting-started.html#in-tag">2-in Tag</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/how-to-learn-javascript.html">How-to-learn-javascript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/how-to-learn-javascript.html#for-learning-javascript-syntax-two-method-available">for learning javascript syntax two method available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/how-to-learn-javascript.html#what-idle-for-javascript">What idle for javascript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/how-to-learn-javascript.html#top-editor">top editor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Javascript Basics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="javascript-syntax.html">JavaScript Syntax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-syntax.html#whitespace-and-line-breaks">Whitespace and Line Breaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-syntax.html#case-sensitivity">Case Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-syntax.html#comments-in-javascript">Comments in JavaScript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-syntax.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Enabling.html">Enabling JavaScript in Browsers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Enabling.html#javascript-in-internet-explorer">JavaScript in Internet Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Enabling.html#javascript-in-firefox">JavaScript in Firefox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Enabling.html#javascript-in-chrome">JavaScript in Chrome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Enabling.html#javascript-in-opera">JavaScript in Opera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Enabling.html#warning-for-non-javascript-browsers">Warning for Non-JavaScript Browsers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Enabling.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Placement.html">JavaScript - Placement in HTML File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Placement.html#javascript-in-head-head-section">JavaScript in &lt;head&gt;...&lt;/head&gt; section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Placement.html#javascript-in-body-body-section">JavaScript in &lt;body&gt;...&lt;/body&gt; section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Placement.html#javascript-in-body-and-head-sections">JavaScript in &lt;body&gt; and &lt;head&gt; Sections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Placement.html#javascript-in-external-file">JavaScript in External File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Placement.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Variables.html">JavaScript - Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Variables.html#javascript-datatypes">JavaScript Datatypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Variables.html#id2">JavaScript Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Variables.html#javascript-variable-scope">JavaScript Variable Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Variables.html#javascript-variable-names">JavaScript Variable Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Variables.html#javascript-reserved-words">JavaScript Reserved Words</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Variables.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Operators.html">JavaScript - Operators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Operators.html#what-is-an-operator">What is an operator?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Operators.html#arithmetic-operators">Arithmetic Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Operators.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Operators.html#comparison-operators">Comparison Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Operators.html#id2">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Operators.html#logical-operators">Logical Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Operators.html#id3">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Operators.html#bitwise-operators">Bitwise Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Operators.html#id4">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Operators.html#assignment-operators">Assignment Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Operators.html#id7">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Operators.html#miscellaneous-operator">Miscellaneous Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Operators.html#conditional-operator">Conditional Operator (? :)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Operators.html#id8">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Operators.html#typeof-operator">typeof Operator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Operators.html#id9">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Operators.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-If...Else.html">JavaScript - if...else Statement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-If...Else.html#flow-chart-of-if-else">Flow Chart of if-else</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-If...Else.html#if-statement">if statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-If...Else.html#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-If...Else.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-If...Else.html#if-else-statement">if...else statement:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-If...Else.html#id1">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-If...Else.html#id2">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-If...Else.html#if-else-if-statement">if...else if... statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-If...Else.html#id3">Syntax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-If...Else.html#id4">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-If...Else.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Switch-Case.html">JavaScript - Switch Case</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Switch-Case.html#flow-chart">Flow Chart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Switch-Case.html#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Switch-Case.html#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Switch-Case.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-While-Loop.html">JavaScript - While Loops</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-While-Loop.html#the-while-loop">The while Loop</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-While-Loop.html#flow-chart">Flow Chart</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-While-Loop.html#syntax">Syntax</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-While-Loop.html#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-While-Loop.html#output">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-While-Loop.html#the-do-while-loop">The do...while Loop</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-While-Loop.html#id1">Flow Chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-While-Loop.html#id2">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-While-Loop.html#id3">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-While-Loop.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-For-Loop.html">JavaScript - For Loop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-For-Loop.html#flow-chart">Flow Chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-For-Loop.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-For-Loop.html#resource">Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-For...in.html">JavaScript for...in loop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-For...in.html#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-For...in.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-For...in.html#resource">Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Loop-Control.html">JavaScript - Loop Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Loop-Control.html#the-break-statement">The break Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Loop-Control.html#flow-chart">Flow Chart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Loop-Control.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Loop-Control.html#the-continue-statement">The continue Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Loop-Control.html#using-labels-to-control-the-flow">Using Labels to Control the Flow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Loop-Control.html#example-1">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Loop-Control.html#example-2">Example 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Loop-Control.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Functions.html">JavaScript - Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Functions.html#function-definition">Function Definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Functions.html#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Functions.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Functions.html#calling-a-function">Calling a Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Functions.html#function-parameters">Function Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Functions.html#id2">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Functions.html#the-return-statement">The return Statement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Functions.html#id3">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Functions.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Events.html">JavaScript - Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Events.html#what-is-an-event">What is an Event ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Events.html#onclick-event-type">onclick Event Type</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Events.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Events.html#onsubmit-event-type">onsubmit Event type</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Events.html#id2">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Events.html#onmouseover-and-onmouseout">onmouseover and onmouseout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Events.html#html-5-standard-events">HTML 5 Standard Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Events.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">JavaScript and Cookies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-cookies">What are Cookies ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-it-works">How It Works ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#storing-cookies">Storing Cookies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#reading-cookies">Reading Cookies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-cookies-expiry-date">Setting Cookies Expiry Date</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-a-cookie">Deleting a Cookie</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Page-Redirect.html">JavaScript - Page Redirection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Page-Redirect.html#what-is-page-redirection">What is Page Redirection ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Page-Redirect.html#how-page-re-direction-works">How Page Re-direction Works ?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Page-Redirect.html#example-1">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Page-Redirect.html#example-2">Example 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Page-Redirect.html#example-3">Example 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Page-Redirect.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Dialog-Boxes.html">JavaScript - Dialog Boxes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Dialog-Boxes.html#alert-dialog-box">Alert Dialog Box</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Dialog-Boxes.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Dialog-Boxes.html#confirmation-dialog-box">Confirmation Dialog Box</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Dialog-Boxes.html#id2">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Dialog-Boxes.html#prompt-dialog-box">Prompt Dialog Box</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Dialog-Boxes.html#id3">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Dialog-Boxes.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Void-Keyword.html">JavaScript - Void Keyword</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Void-Keyword.html#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Void-Keyword.html#example-1">Example 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Void-Keyword.html#example-2">Example 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Void-Keyword.html#example-3">Example 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Void-Keyword.html#resource">Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javascript-Page-Printing.html">JavaScript - Page Printing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Page-Printing.html#example">Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="javascript-Page-Printing.html#how-to-print-a-page">How to Print a Page</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-Page-Printing.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">JavaScript Objects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-objects/javascript-objects.html">JavaScript - Objects Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-objects.html#object-properties">Object Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-objects.html#object-methods">Object Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-objects.html#user-defined-objects">User-Defined Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-objects.html#the-new-operator">The new Operator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-objects.html#the-object-constructor">The Object() Constructor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-objects.html#example-1">Example 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-objects.html#example-2">Example 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-objects.html#defining-methods-for-an-object">Defining Methods for an Object</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-objects.html#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-objects.html#syntax">Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-objects.html#id1">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-objects.html#javascript-native-objects">JavaScript Native Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-objects.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-objects/javascript-number.html">JavaScript - The Number Object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-number.html#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-number.html#number-properties">Number Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-number.html#number-methods">Number Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-number.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-objects/javascript-boolean.html">JavaScript - The Boolean Object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-boolean.html#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-boolean.html#boolean-properties">Boolean Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-boolean.html#boolean-methods">Boolean Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-boolean.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-objects/javascript-strings.html">JavaScript - The Strings Object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-strings.html#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-strings.html#string-properties">String Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-strings.html#string-methods">String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-strings.html#string-html-wrappers">String HTML Wrappers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-strings.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-objects/javascript-arrays.html">JavaScript - The Arrays Object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-arrays.html#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-arrays.html#array-properties">Array Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-arrays.html#array-methods">Array Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-arrays.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-objects/javascript-date.html">JavaScript - The Date Object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-date.html#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-date.html#date-properties">Date Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-date.html#date-methods">Date Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-date.html#date-static-methods">Date Static Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-date.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-objects/javascript-math.html">JavaScript - The Math Object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-math.html#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-math.html#math-properties">Math Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-math.html#math-methods">Math Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-math.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-objects/javascript-regExp.html">Regular Expressions and RegExp Object</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#brackets">Brackets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#quantifiers">Quantifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#literal-characters">Literal characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#metacharacters">Metacharacters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#modifiers">Modifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#regexp-properties">RegExp Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#regexp-methods">RegExp Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-regExp.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-objects/javascript-html-DOM.html">JavaScript - Document Object Model or DOM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-objects/javascript-html-DOM.html#dom-compatibility">DOM compatibility</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-objects/javascript-html-DOM.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">JavaScript Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html">JavaScript - Errors &amp; Exceptions Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#syntax-errors">Syntax Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#runtime-errors">Runtime Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#logical-errors">Logical Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#the-try-catch-finally-statement">The try...catch...finally Statement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#the-throw-statement">The throw Statement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#the-onerror-method">The onerror() Method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#id1">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-error-handling.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-advanced/javascript-validations.html">JavaScript - Form Validation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-validations.html#example">Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-validations.html#basic-form-validation">Basic Form Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-validations.html#data-format-validation">Data Format Validation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-validations.html#id1">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-validations.html#resource">Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-advanced/javascript-animation.html">JavaScript - Animation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-animation.html#manual-animation">Manual Animation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-animation.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-animation.html#automated-animation">Automated Animation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-animation.html#id2">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-animation.html#rollover-with-a-mouse-event">Rollover with a Mouse Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-animation.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-advanced/javascript-multimedia.html">JavaScript - Multimedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-multimedia.html#example">Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-multimedia.html#checking-for-plug-ins">Checking for Plug-Ins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-multimedia.html#controlling-multimedia">Controlling Multimedia</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-multimedia.html#resource">Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html">JavaScript - Debugging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html#error-messages-in-ie">Error Messages in IE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html#error-messages-in-firefox-or-mozilla">Error Messages in Firefox or Mozilla</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html#error-notifications">Error Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html#how-to-debug-a-script">How to debug a Script</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html#use-a-javascript-validator">Use a JavaScript Validator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html#add-debugging-code-to-your-programs">Add Debugging Code to Your Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html#use-a-javascript-debugger">Use a JavaScript Debugger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html#useful-tips-for-developers">Useful tips for developers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-debugging.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-advanced/javascript-image-map.html">JavaScript - Image Map</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-image-map.html#resource">Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-advanced/javascript-browsers.html">JavaScript - Browsers Compatibility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-browsers.html#navigator-properties">Navigator Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-browsers.html#navigator-methods">Navigator Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-advanced/javascript-browsers.html#browser-detection">Browser Detection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-advanced/javascript-browsers.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">JavaScript Snippet</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-snippet/javascript-scroll-up.html">How To Create a Scroll To Top Button</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-snippet/javascript-scroll-up.html#add-html">Add HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-snippet/javascript-scroll-up.html#add-css">Add CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-snippet/javascript-scroll-up.html#add-javascript">Add JavaScript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-snippet/javascript-scroll-up.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript-snippet/javascript-print-page.html">How to print the current page</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-snippet/javascript-print-page.html#example-add-to-tag">Example add to tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../javascript-snippet/javascript-print-page.html#example-add-to-head">Example add to head</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../javascript-snippet/javascript-print-page.html#resource">Resource</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Javascript Learning</a>
+      </nav>
+
+
+
+      
+      <!-- left menu -->
+      <div class="wy-nav-content">
+
+        <div class="mobilenav"> 
+          <li><a target="_blank" href="./../editor/index.html">Editor</a></li> 
+          <li><a target="_blank" href="mailto:no-one@snai1mai1.com">Contact</a></li> 
+          <li><a target="_blank" href="https://itseeweb.com/">About</a></li> 
+        </div>
+        <a href="javascript:void(0)" class="icon1">
+          <div class="hamburger">
+            <div class="menui top-menu"></div>
+            <div class="menui mid-menu"></div>
+            <div class="menui bottom-menu"></div>
+          </div>
+        </a>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>JavaScript and Cookies</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/javascript-basics/javascript-Cookies.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="javascript-and-cookies">
+<span id="javascript-cookies"></span><h1>JavaScript and Cookies<a class="headerlink" href="#javascript-and-cookies" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-are-cookies">
+<h2>What are Cookies ?<a class="headerlink" href="#what-are-cookies" title="Permalink to this headline">¶</a></h2>
+<p>Web Browsers and Servers use HTTP protocol to communicate and HTTP is a stateless protocol. But for a commercial website, it is required to maintain session information among different pages. For example, one user registration ends after completing many pages. But how to maintain users&#8217; session information across all the web pages.</p>
+<p>In many situations, using cookies is the most efficient method of remembering and tracking preferences, purchases, commissions, and other information required for better visitor experience or site statistics.</p>
+</div>
+<div class="section" id="how-it-works">
+<h2>How It Works ?<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>Your server sends some data to the visitor&#8217;s browser in the form of a cookie. The browser may accept the cookie. If it does, it is stored as a plain text record on the visitor&#8217;s hard drive. Now, when the visitor arrives at another page on your site, the browser sends the same cookie to the server for retrieval. Once retrieved, your server knows/remembers what was stored earlier.</p>
+<p>Cookies are a plain text data record of 5 variable-length fields</p>
+<blockquote>
+<div><p>Expires − The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.</p>
+<p>Domain − The domain name of your site.</p>
+<p>Path − The path to the directory or web page that set the cookie. This may be blank if you want to retrieve the cookie from any directory or page.</p>
+<p>Secure − If this field contains the word &#8220;secure&#8221;, then the cookie may only be retrieved with a secure server. If this field is blank, no such restriction exists.</p>
+<p>Name=Value − Cookies are set and retrieved in the form of key-value pairs</p>
+</div></blockquote>
+<p>Cookies were originally designed for CGI programming. The data contained in a cookie is automatically transmitted between the web browser and the web server, so CGI scripts on the server can read and write cookie values that are stored on the client.</p>
+<p>JavaScript can also manipulate cookies using the <code class="docutils literal"><span class="pre">cookie</span></code> property of the <code class="docutils literal"><span class="pre">Document</span></code> object. JavaScript can read, create, modify, and delete the cookies that apply to the current web page.</p>
+</div>
+<div class="section" id="storing-cookies">
+<h2>Storing Cookies<a class="headerlink" href="#storing-cookies" title="Permalink to this headline">¶</a></h2>
+<p>The simplest way to create a cookie is to assign a string value to the document.cookie object, which looks like this.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">=</span> <span class="s2">&quot;key1=value1;key2=value2;expires=date&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Here the <code class="docutils literal"><span class="pre">expires</span></code> attribute is optional. If you provide this attribute with a valid date or time, then the cookie will expire on a given date or time and thereafter, the cookies&#8217; value will not be accessible.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Cookie values may not include semicolons, commas, or whitespace. For this reason, you may want to use the JavaScript <code class="docutils literal"><span class="pre">escape()</span></code> function to encode the value before storing it in the cookie. If you do this, you will also have to use the corresponding <code class="docutils literal"><span class="pre">unescape()</span></code> function when you read the cookie value.</p>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Try the following. It sets a customer name in an input cookie.</p>
+<div class="highlight-javascript"><div class="highlight"><pre>&lt;html&gt;
+   &lt;head&gt;
+
+      &lt;script type = &quot;text/javascript&quot;&gt;
+         &lt;!--
+            function WriteCookie()
+            {
+               if( document.myform.customer.value == &quot;&quot; ){
+                  alert(&quot;Enter some value!&quot;);
+                  return;
+               }
+               cookievalue= escape(document.myform.customer.value) + &quot;;&quot;;
+               document.cookie=&quot;name=&quot; + cookievalue;
+               document.write (&quot;Setting Cookies : &quot; + &quot;name=&quot; + cookievalue );
+            }
+         //--&gt;
+      &lt;/script&gt;
+
+   &lt;/head&gt;
+
+   &lt;body&gt;
+
+      &lt;form name=&quot;myform&quot; action=&quot;&quot;&gt;
+         Enter name: &lt;input type=&quot;text&quot; name=&quot;customer&quot;/&gt;
+         &lt;input type=&quot;button&quot; value=&quot;Set Cookie&quot; onclick=&quot;WriteCookie();&quot;/&gt;
+      &lt;/form&gt;
+
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>Now your machine has a cookie called <code class="docutils literal"><span class="pre">name</span></code>. You can set multiple cookies using multiple key=value pairs separated by comma.</p>
+</div>
+</div>
+<div class="section" id="reading-cookies">
+<h2>Reading Cookies<a class="headerlink" href="#reading-cookies" title="Permalink to this headline">¶</a></h2>
+<p>Reading a cookie is just as simple as writing one, because the value of the document.cookie object is the cookie. So you can use this string whenever you want to access the cookie. The document.cookie string will keep a list of name=value pairs separated by semicolons, where <code class="docutils literal"><span class="pre">name</span></code> is the name of a cookie and value is its string value.</p>
+<p>You can use strings&#8217; <code class="docutils literal"><span class="pre">split()</span></code> function to break a string into key and values as follows −</p>
+<div class="section" id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Try the following example to get all the cookies.</p>
+<div class="highlight-javascript"><div class="highlight"><pre>&lt;html&gt;
+   &lt;head&gt;
+
+      &lt;script type=&quot;text/javascript&quot;&gt;
+         &lt;!--
+            function ReadCookie()
+            {
+               var allcookies = document.cookie;
+               document.write (&quot;All Cookies : &quot; + allcookies );
+
+               // Get all the cookies pairs in an array
+               cookiearray = allcookies.split(&#39;;&#39;);
+
+               // Now take key value pair out of this array
+               for(var i=0; i&lt;cookiearray.length; i++){
+                  name = cookiearray[i].split(&#39;=&#39;)[0];
+                  value = cookiearray[i].split(&#39;=&#39;)[1];
+                  document.write (&quot;Key is : &quot; + name + &quot; and Value is : &quot; + value);
+               }
+            }
+         //--&gt;
+      &lt;/script&gt;
+
+   &lt;/head&gt;
+   &lt;body&gt;
+
+      &lt;form name=&quot;myform&quot; action=&quot;&quot;&gt;
+         &lt;p&gt; click the following button and see the result:&lt;/p&gt;
+         &lt;input type=&quot;button&quot; value=&quot;Get Cookie&quot; onclick=&quot;ReadCookie()&quot;/&gt;
+      &lt;/form&gt;
+
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Here <code class="docutils literal"><span class="pre">length</span></code> is a method of <code class="docutils literal"><span class="pre">Array</span></code> class which returns the length of an array. We will discuss Arrays in a separate chapter. By that time, please try to digest it.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There may be some other cookies already set on your machine. The above code will display all the cookies set on your machine.</p>
+</div>
+</div>
+</div>
+<div class="section" id="setting-cookies-expiry-date">
+<h2>Setting Cookies Expiry Date<a class="headerlink" href="#setting-cookies-expiry-date" title="Permalink to this headline">¶</a></h2>
+<p>You can extend the life of a cookie beyond the current browser session by setting an expiration date and saving the expiry date within the cookie. This can be done by setting the <code class="docutils literal"><span class="pre">‘expires’</span></code> attribute to a date and time.</p>
+<div class="section" id="id2">
+<h3>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Try the following example. It illustrates how to extend the expiry date of a cookie by 1 Month.</p>
+<div class="highlight-javascript"><div class="highlight"><pre>&lt;html&gt;
+   &lt;head&gt;
+
+      &lt;script type=&quot;text/javascript&quot;&gt;
+         &lt;!--
+            function WriteCookie()
+            {
+               var now = new Date();
+               now.setMonth( now.getMonth() + 1 );
+               cookievalue = escape(document.myform.customer.value) + &quot;;&quot;
+
+               document.cookie=&quot;name=&quot; + cookievalue;
+               document.cookie = &quot;expires=&quot; + now.toUTCString() + &quot;;&quot;
+               document.write (&quot;Setting Cookies : &quot; + &quot;name=&quot; + cookievalue );
+            }
+         //--&gt;
+      &lt;/script&gt;
+
+   &lt;/head&gt;
+   &lt;body&gt;
+
+      &lt;form name=&quot;myform&quot; action=&quot;&quot;&gt;
+         Enter name: &lt;input type=&quot;text&quot; name=&quot;customer&quot;/&gt;
+         &lt;input type=&quot;button&quot; value=&quot;Set Cookie&quot; onclick=&quot;WriteCookie()&quot;/&gt;
+      &lt;/form&gt;
+
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deleting-a-cookie">
+<h2>Deleting a Cookie<a class="headerlink" href="#deleting-a-cookie" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you will want to delete a cookie so that subsequent attempts to read the cookie return nothing. To do this, you just need to set the expiry date to a time in the past.</p>
+<div class="section" id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Try the following example. It illustrates how to delete a cookie by setting its expiry date to one month behind the current date.</p>
+<div class="highlight-javascript"><div class="highlight"><pre>&lt;html&gt;
+   &lt;head&gt;
+
+      &lt;script type=&quot;text/javascript&quot;&gt;
+         &lt;!--
+            function WriteCookie()
+            {
+               var now = new Date();
+               now.setMonth( now.getMonth() - 1 );
+               cookievalue = escape(document.myform.customer.value) + &quot;;&quot;
+
+               document.cookie=&quot;name=&quot; + cookievalue;
+               document.cookie = &quot;expires=&quot; + now.toUTCString() + &quot;;&quot;
+               document.write(&quot;Setting Cookies : &quot; + &quot;name=&quot; + cookievalue );
+            }
+          //--&gt;
+      &lt;/script&gt;
+
+   &lt;/head&gt;
+   &lt;body&gt;
+
+      &lt;form name=&quot;myform&quot; action=&quot;&quot;&gt;
+         Enter name: &lt;input type=&quot;text&quot; name=&quot;customer&quot;/&gt;
+         &lt;input type=&quot;button&quot; value=&quot;Set Cookie&quot; onclick=&quot;WriteCookie()&quot;/&gt;
+      &lt;/form&gt;
+
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="resource">
+<h3>Resource<a class="headerlink" href="#resource" title="Permalink to this headline">¶</a></h3>
+<p>tutorialspoint.com</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="javascript-Page-Redirect.html" class="btn btn-neutral float-right" title="JavaScript - Page Redirection" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="javascript-Events.html" class="btn btn-neutral" title="JavaScript - Events" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jun 02, 2017.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    $(".icon1").click(function () {
+      $(".mobilenav").fadeToggle(500);
+      $(".top-menu").toggleClass("top-animate");
+      $(".mid-menu").toggleClass("mid-animate");
+      $(".bottom-menu").toggleClass("bottom-animate");
+    });
+  });
+</script>
+
+</body>
+</html>

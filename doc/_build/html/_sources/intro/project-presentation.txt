@@ -1,0 +1,19 @@
+.. _project-presentation:
+
+Project Presentation
+====================
+
+js-learn
+---------
+
+js-learn is Document for learning javascript.
+
+-  rezaduty / :user:`rezaduty` (Developer)
+
+
+.. _`contribution guidelines`: https://github.com/syncthing/syncthing/blob/master/CONTRIBUTING.md
+.. _Gitlab: https://gitlab.com/rezaduty/js-learn
+.. _`issue tracker`: https://gitlab.com/rezaduty/js-learn/boards
+.. _`latest version`: https://gitlab.com/rezaduty/js-learn/tree/master
+.. _`Security page`: https://gitlab.com/rezaduty/js-learn/labels
+.. _`friendly forum`: #

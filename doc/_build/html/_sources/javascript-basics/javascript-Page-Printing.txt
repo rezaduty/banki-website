@@ -1,0 +1,54 @@
+.. _javascript-Page-Printing:
+
+JavaScript - Page Printing
+===================
+
+Many times you would like to place a button on your webpage to print the content of that web page via an actual printer. JavaScript helps you to implement this functionality using the ``print`` function of ``window`` object.
+
+The JavaScript print function ``window.print()`` prints the current web page when executed. You can call this function directly using the ``onclick`` event as shown in the following example.
+
+Example
+~~~~~~~~~~~~
+
+Try the following example.
+
+.. code-block:: javascript
+
+	<html>
+	   <head>
+	      
+	      <script type="text/javascript">
+	         <!--
+	         //-->
+	      </script>
+	   
+	   </head>
+	   
+	   <body>
+	      
+	      <form>
+	         <input type="button" value="Print" onclick="window.print()" />
+	      </form>
+	   
+	   </body>
+	<html>
+
+
+Although it serves the purpose of getting a printout, it is not a recommended way. A printer friendly page is really just a page with text, no images, graphics, or advertising.
+
+You can make a page printer friendly in the following ways −
+
+	→ Make a copy of the page and leave out unwanted text and graphics, then link to that printer friendly page from the original. Check Example.
+
+	→ If you do not want to keep an extra copy of a page, then you can mark your printable text using proper comments like <!-- PRINT STARTS HERE -->..... <!-- PRINT ENDS HERE --> and then you can use PERL or any other script in the background to purge printable text and display for final printing. We at Tutorialspoint use this method to provide print facility to our site visitors. Check Example.
+
+How to Print a Page
+---------------------
+
+If you don’t find the above facilities on a web page, then you can use the browser's standard toolbar to get print the web page. Follow the link as follows.
+
+File →  Print → Click OK  button.
+
+Resource
+~~~~~~~~~
+tutorialspoint.com

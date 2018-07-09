@@ -1,0 +1,106 @@
+.. _javascript-Enabling:
+
+Enabling JavaScript in Browsers
+===================
+
+All the modern browsers come with built-in support for JavaScript. Frequently, you may need to enable or disable this support manually. This chapter explains the procedure of enabling and disabling JavaScript support in your browsers: Internet Explorer, Firefox, chrome, and Opera.
+
+JavaScript in Internet Explorer
+--------------------------
+
+Here are simple steps to turn on or turn off JavaScript in your Internet Explorer 
+
+    → Follow Tools → Internet Options from the menu.
+
+    → Select Security tab from the dialog box.
+
+    → Click the Custom Level button.
+
+    → Scroll down till you find Scripting option.
+
+    → Select Enable radio button under Active scripting.
+
+    → Finally click OK and come out
+
+To disable JavaScript support in your Internet Explorer, you need to select Disable radio button under Active scripting.
+
+JavaScript in Firefox
+------------------------
+
+Here are the steps to turn on or turn off JavaScript in Firefox −
+
+    Open a new tab → type ``about: config`` in the address bar.
+
+    Then you will find the warning dialog. Select ``I’ll be careful, I promise!``
+
+    Then you will find the list of ``configure options`` in the browser.
+
+    In the search bar, type ``javascript.enabled``.
+
+    There you will find the option to enable or disable javascript by right-clicking on the value of that option → ``select toggle``.
+
+If javascript.enabled is true; it converts to false upon clicking ``toogle``. If javascript is disabled; it gets enabled upon clicking toggle.
+
+
+JavaScript in Chrome
+------------------------
+
+Here are the steps to turn on or turn off JavaScript in Chrome −
+
+    → Click the Chrome menu at the top right hand corner of your browser.
+
+    → Select ``Settings``.
+
+    → Click ``Show advanced settings`` at the end of the page.
+
+    → Under the ``Privacy`` section, click the Content settings button.
+
+    → In the "Javascript" section, select "Do not allow any site to run JavaScript" or "Allow all sites to run JavaScript (recommended)".
+
+JavaScript in Opera
+-----------------------
+
+Here are the steps to turn on or turn off JavaScript in Opera −
+
+    → Follow ``Tools → Preferences`` from the menu.
+
+    → Select ``Advanced`` option from the dialog box.
+
+    → Select ``Content`` from the listed items.
+
+    → Select ``Enable JavaScript`` checkbox.
+
+    → Finally click OK and come out.
+
+To disable JavaScript support in your Opera, you should not select the ``Enable JavaScript checkbox``.
+
+Warning for Non-JavaScript Browsers
+----------------------------------
+
+If you have to do something important using JavaScript, then you can display a warning message to the user using ``<noscript>`` tags.
+
+You can add a ``noscript`` block immediately after the script block as follows −
+
+.. code-block:: javascript
+
+	<html>
+	   <body>
+	      
+	      <script language="javascript" type="text/javascript">
+	         <!--
+	            document.write("Hello World!")
+	         //-->
+	      </script>
+	      
+	      <noscript>
+	         Sorry...JavaScript is needed to go ahead.
+	      </noscript>
+	      
+	   </body>
+	</html>
+
+Now, if the user's browser does not support JavaScript or JavaScript is not enabled, then the message from </noscript> will be displayed on the screen.
+
+Resource
+~~~~~~~~~
+tutorialspoint.com

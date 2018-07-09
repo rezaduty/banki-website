@@ -1,0 +1,95 @@
+.. _javascript-strings:
+
+JavaScript - The Strings Object
+===================
+
+The ``String`` object lets you work with a series of characters; it wraps Javascript's string primitive data type with a number of helper methods.
+
+As JavaScript automatically converts between string primitives and String objects, you can call any of the helper methods of the String object on a string primitive.
+
+Syntax
+--------
+Use the following syntax to create a String object −
+
+.. code-block:: javascript
+
+	var val = new String(string);
+
+The ``String`` parameter is a series of characters that has been properly encoded.
+
+String Properties
+--------------------
+
+Here is a list of the properties of String object and their description.
+
+=============  =============
+Property        Description
+=============  =============
+`constructor`    Returns a reference to the Boolean function that created the object.
+`length`         Returns the length of the string.
+`prototype`      The prototype property allows you to add properties and methods to an object.
+=============  =============
+
+In the following sections, we will have a few examples to demonstrate the usage of String properties.
+
+String Methods
+-----------------
+
+Here is a list of the methods available in String object along with their description.
+
+
+===================  ============
+Method               Description
+===================  ============
+charAt()             Returns the character at the specified index.
+charCodeAt()          Returns a string of either "true" or "false" depending upon the value of the object.
+concat()               Combines the text of two strings and returns a new string.
+indexOf()              Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.
+lastIndexOf()          Returns the index within the calling String object of the last occurrence of the specified value, or -1 if not found.
+localeCompare()        Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.
+match()                Used to match a regular expression against a string.
+replace()              Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring.
+search()               Executes the search for a match between a regular expression and a specified .
+slice()                Extracts a section of a string and returns a new string.
+split()                Splits a String object into an array of strings by separating the string into .
+substr()               Returns the characters in a string beginning at the specified location through the specified number of characters.
+substring()            Returns the characters in a string between two indexes into the string.
+toLocaleLowerCase()    The characters within a string are converted to lower case while respecting the
+toLocaleUpperCase()    The characters within a string are converted to upper case while respecting the
+toLowerCase()          Returns the calling string value converted to lower case.
+toString()             Returns a string representing the specified object.
+toUpperCase()          Returns the calling string value converted to uppercase.
+valueOf()              Returns the primitive value of the specified object.
+===================  ============
+
+
+
+String HTML Wrappers
+----------------------
+
+Here is a list of the methods that return a copy of the string wrapped inside an appropriate HTML tag.
+
+===================  ============
+Method               Description
+===================  ============
+anchor()             Creates an HTML anchor that is used as a hypertext target.
+big()                Creates a string to be displayed in a big font as if it were in a <big> tag.
+blink()              Creates a string to blink as if it were in a <blink> tag.
+bold()               Creates a string to be displayed as bold as if it were in a <b> tag.
+fixed()              Causes a string to be displayed in fixed-pitch font as if it were in a <tt> tag
+fontcolor()          Causes a string to be displayed in the specified color as if it were in a <font color="color"> tag.
+fontsize()           Causes a string to be displayed in the specified font size as if it were in a <font size="size"> tag.
+italics()            Causes a string to be italic, as if it were in an <i> tag.
+link()               Creates an HTML hypertext link that requests another URL.
+small()              Causes a string to be displayed in a small font, as if it were in a <small> tag.
+strike()             Causes a string to be displayed as struck-out text, as if it were in a <strike> tag.
+sub()                Causes a string to be displayed as a subscript, as if it were in a <sub> tag
+sup()				 Causes a string to be displayed as a superscript, as if it were in a <sup> tag
+===================  ============
+
+In the following sections, we will have a few examples to demonstrate the usage of String methods.
+
+
+Resource
+~~~~~~~~~
+tutorialspoint.com
