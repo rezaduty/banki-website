@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>بررسی دستگاه &mdash; نوبت دهی غیر حضوری بانک Banki v0.2 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+          <link href='http://www.fontonline.ir/css/BYekan.css' rel='stylesheet' type='text/css'>
+<style>
+  *{
+  font-family:'BYekan',Sans-Serif;
+ }
+ h1,h2,h3,h4,h5,h6{
+    font-family:'BYekan',Sans-Serif !important;
+
+ }
+ p{
+    font-family:'BYekan',Sans-Serif;
+    font-size: 17px;
+ }
+ .caption-text{
+  color: #2980b9;
+ }
+ .wy-menu-vertical{
+  width: 291px !important;
+ }
+ .wy-nav-content{
+  max-width: 100% !important;
+ }
+ pre{
+   direction: ltr !important;
+ }
+</style>
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/syncthing.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="نوبت دهی غیر حضوری بانک Banki v0.2 documentation" href="../index.html"/>
+        <link rel="prev" title="مشخصات دستگاه" href="simul-information.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+  <style type="text/css">
+      .menui {
+      background: #fff;
+      transition: 0.6s ease;
+      transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
+      margin-top: 10px;
+      position: absolute;
+    }
+
+    .icon1 {
+      z-index: 999;
+      position: fixed;
+      display: block;
+      padding: 9px;
+      height: 32px;
+      width: 32px;
+      margin: 0px;
+      top: 0;
+      left: 2%;
+    }
+
+@media (min-width : 320px) {
+  .icon1{
+    top: 3%;
+    left: 7%;
+  }
+}
+
+    .mobilenav {
+      font-family: inherit;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 153, 153, 0.7);
+      opacity: 0.9;
+    }
+
+    .mobilenav li {
+      list-style-type: none;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .mobilenav li a {
+      font-size: 150%;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 300;
+      width: 100%;
+    }
+
+    .mobilenav li:first-child { margin-top: 60px; }
+
+    .top-animate {
+      background: #fff !important;
+      top: 13px !important;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .mid-animate { opacity: 0; }
+
+    .bottom-animate {
+      background: #fff !important;
+      top: 13px !important;
+      -webkit-transform: rotate(-225deg);
+      transform: rotate(-225deg);
+    }
+
+    .top-menu {
+      top: 5px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+
+    .mid-menu {
+      top: 13px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+
+    .bottom-menu {
+      top: 21px;
+      width: 25px;
+      height: 2px;
+      border-radius: 10px;
+      background-color: #0070b9;
+    }
+    
+  </style>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> نوبت دهی غیر حضوری بانک Banki
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="جست و جو" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <p class="caption"><span class="caption-text">راه اندازی</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-run/server-run.html">راه اندازی پروژه</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-run/server-run.html#id2">راه اندازی سرور</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-run/server-run.html#id5">راه اندازی بانک ها</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-run/server-run.html#id6">راه اندازی بات</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">مقدمه</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html">به چه دردی میخورد ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id2">آیا استفاده از آن آسان است ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id3">سخنی با بانک داران</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id4">سیستم نوبت دهی چیست ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id5">سیستم نوبت‌دهی بی‌سیم</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id6">نوبت دهی پیامکی چیست؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/about-project.html#id7">کیوسک نوبت دهی یا استند نوبت دهی چیست؟</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/about-project.html#id8">منابع</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">هسته - سرور</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/algorithm-overview.html">بررسی الگوریتم ؟</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/server-overview1.html">بررسی سرور قسمت ۱</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#http-rest">از HTTP و REST چه می دانید ؟</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#rest">REST چیست ؟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#http">HTTP چیست ؟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id2">HTTP را جاسوسی کنید !</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#url">URL چیست ؟</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id3">عملیات های مختلف HTTP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#get">GET</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#put">PUT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#delete">DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#post">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#rest-api">REST API چیست و چگونه کار می کند ؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#soap-restful">تفاوت وب سرویس های SOAP و  RESTful چیست؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#restful-rest">RESTful یا REST بودن یک وب سایت به چه معناست؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview1.html#json">مدل داده JSON</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id4">خصوصیات JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview1.html#id5">منابع</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/server-overview2.html">بررسی سرور قسمت ۲</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-golang">آشنایی با زبان برنامه نویسی Go یا Golang</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview2.html#id2">چرا گو ?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go">Go یک زبان مدرن و همه منظوره است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id3">Go یک زبان (آزاد) و متن باز است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id4">Go یک زبان کامپایل شونده است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-syntax">Go و Syntax آشنا</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-procedural">Go یک زبان رویه‌ای است (Procedural)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id5">ابتدا یک توضیح ساده در باره کلاس‌ها و اشیا</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-class-struct">Go به جای Class از Struct استفاده می‌کند</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-composition">Go از Composition به جای وراثت استفاده می‌کند</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-static-type">Go یک زبان Static-Type است</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-concurrency">Go و Concurrency:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview2.html#coroutine-thread">Coroutine‌ها چندین فرق اساسی با Thread‌ها دارند:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#go-functional">Go و قابلیت‌های Functional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#closure">توضیح درباره Closure ها:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id6">قابلیت‌های نداشته، قابلیت اصلی زبان Go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id7">نواقص زبان برنامه نویسی Go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id8">از کجا کار با Go را شروع کنیم؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-overview2.html#id9">کاربرد زبان برنامه نویسی Go کجاست؟</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-overview2.html#id10">منابع</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-server/server-code-overview.html">بررسی کد سرور</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-code-overview.html#id2">ساختار پروژه</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-code-overview.html#id5">بررسی فایل های پروژه</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#logger-go">logger.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#error-go">error.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#handlers-go">handlers.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#repo-go">repo.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#router-go">router.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#routes-go">routes.go</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-server/server-code-overview.html#todo-go">todo.go</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-server/server-code-overview.html#main-go">main.go</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">رابط کاربری - وبسایت</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-webapp/webapp-overview.html">نوبت دهی از طریق وبسایت چگونه است ؟</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id2">صفحه اصلی</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id3">ثبت نام</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id4">بررسی کد و ساختار</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id5">بررسی  ساختار پوشه ها</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#id6">بررسی کد های مربوطه</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#index-html">index.html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-webapp/webapp-overview.html#gotest-logup-html">gotest.logup.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">رابط کاربری - ربات</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-bot/bot-overview.html">نوبت دهی از طریق ربات</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-bot/bot-overview.html#id2">نوبت دهی از طریق ربات چگونه است ؟</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-bot/bot-overview.html#id4">بررسی کد</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-bot/bot-overview.html#colorer-py">Colorer.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gotest-bot/bot-overview.html#telegrambot-py">telegrambot.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">گزارشات</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gotest-benchmark/intro-benchmark.html">سرعت سیستم چگونه است</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gotest-benchmark/intro-benchmark.html#id2">برنامه تست</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">دستگاه شبیه ساز نوبت دهی غیر حضوری</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="simul-information.html">مشخصات دستگاه</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simul-information.html#id2">اندازه و نوع بنده دستگاه</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simul-information.html#id3">قطعات به کار رفته در دستگاه</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">بررسی دستگاه</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">بررسی مدار</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">بررسی کد</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">نوبت دهی غیر حضوری بانک Banki</a>
+      </nav>
+
+
+
+      
+      <!-- left menu -->
+      <div class="wy-nav-content">
+        <div class="mobilenav"> 
+          <li><a target="_blank" href="#">Website</a></li> 
+          <li><a target="_blank" href="#">App</a></li> 
+          <li><a target="_blank" href="#">Telegram Bot</a></li> 
+        </div>
+        <a href="javascript:void(0)" class="icon1">
+          <div class="hamburger">
+            <div class="menui top-menu"></div>
+            <div class="menui mid-menu"></div>
+            <div class="menui bottom-menu"></div>
+          </div>
+        </a>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">مستندات</a> &raquo;</li>
+      
+    <li>بررسی دستگاه</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/gotest-simulation/simul-overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="simul-overview-rst">
+<span id="id1"></span><h1>بررسی دستگاه<a class="headerlink" href="#simul-overview-rst" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>بررسی مدار<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/main_schem.png" src="../_images/main_schem.png" />
+</div>
+<div class="section" id="id3">
+<h2>بررسی کد<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>کتابخوانه ها و کد گذاری فایل</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">RPi.GPIO</span> <span class="kn">as</span> <span class="nn">GPIO</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">json</span><span class="o">,</span><span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>تابعی برای پخش صدا که ۲ پارامتر میگیرد</p>
+<p>اولی برای خواندن شماره کاربر</p>
+<p>دومی برای خواندن شماره باجه</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># داخل پوشه sound فایل حاوی صدا شماره ارسالی به تابع پخش خواهد شد</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;sound/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.wav&quot;</span><span class="p">)</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;sound/&quot;</span><span class="o">+</span><span class="s2">&quot;b1.mp3&quot;</span><span class="p">)</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;sound/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.wav&quot;</span><span class="p">)</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>تابعی برای جلو بردن صف که دو پارامتر میگیرد</p>
+<p>اولی برای آدرس سرور است</p>
+<p>دومی برای شماره شعبه بانک که دستگاه روی آن در حال اجرا است</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RunQueue</span><span class="p">(</span><span class="n">param_ip</span><span class="p">,</span><span class="n">param_branch</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s2">&quot;GoTo RunQueue()&quot;</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;http://&#39;</span><span class="o">+</span> <span class="n">param_ip</span> <span class="o">+</span><span class="s1">&#39;:8088/queue/&#39;</span><span class="o">+</span><span class="n">param_branch</span><span class="p">,</span><span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;bankId&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="o">+</span> <span class="n">param_branch</span> <span class="o">+</span><span class="s2">&quot;&quot;</span><span class="p">})</span>
+
+    <span class="c1">#r = requests.get(&#39;http://&#39;+ param_ip +&#39;:8088/queue/&#39;+param_branch)</span>
+    <span class="k">try</span><span class="p">:</span>
+
+        <span class="k">print</span> <span class="s2">&quot;OK&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">print</span> <span class="n">data</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="s1">&#39;active_turns_number&#39;</span><span class="p">])</span>
+
+
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s2">&quot;Server Not Working&quot;</span>
+</pre></div>
+</div>
+<p>تابعی برای روشن و خاموش شدن led که یک پارامتر میگیرد</p>
+<p>پارامتر برا دادن آدرس led است</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">blink</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">GPIO</span><span class="o">.</span><span class="n">HIGH</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">GPIO</span><span class="o">.</span><span class="n">LOW</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+<p>تابعی که در شروع برنامه نقش راه اندازی پایه های برد را دارد</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">():</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setmode</span><span class="p">(</span><span class="n">GPIO</span><span class="o">.</span><span class="n">BCM</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setwarnings</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">GPIO</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">pull_up_down</span><span class="o">=</span><span class="n">GPIO</span><span class="o">.</span><span class="n">PUD_UP</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">pull_up_down</span><span class="o">=</span><span class="n">GPIO</span><span class="o">.</span><span class="n">PUD_UP</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">pull_up_down</span><span class="o">=</span><span class="n">GPIO</span><span class="o">.</span><span class="n">PUD_UP</span><span class="p">)</span>
+    <span class="n">GPIO</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">pull_up_down</span><span class="o">=</span><span class="n">GPIO</span><span class="o">.</span><span class="n">PUD_UP</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>تابعی برای ساخت نام و نام خانوادگی تصادفی</p>
+<p>کاربرد آن برای شبیه سازی نوبت دهی حضوری است</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">name_family</span><span class="p">():</span>
+        <span class="n">foo</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;محمد&#39;</span><span class="p">,</span><span class="s1">&#39;مراد&#39;</span><span class="p">,</span><span class="s1">&#39;قلی&#39;</span><span class="p">,</span><span class="s1">&#39;آرش&#39;</span><span class="p">,</span><span class="s1">&#39;حمید&#39;</span><span class="p">,</span><span class="s1">&#39;یاسر&#39;</span><span class="p">,</span><span class="s1">&#39;مرصاد&#39;</span>\
+        <span class="p">,</span> <span class="s1">&#39;رضا&#39;</span><span class="p">,</span> <span class="s1">&#39;تقی&#39;</span><span class="p">,</span> <span class="s1">&#39;محمد تقی&#39;</span><span class="p">,</span><span class="s1">&#39;احمد&#39;</span><span class="p">,</span><span class="s1">&#39;مریم&#39;</span><span class="p">,</span><span class="s1">&#39;رضوان&#39;</span><span class="p">,</span><span class="s1">&#39;روشنک&#39;</span><span class="p">,</span><span class="s1">&#39;مرجان&#39;</span><span class="p">]</span>
+        <span class="n">secure_random</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">SystemRandom</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">secure_random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">foo</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>تابعی برای ساخت شماره تلفن تصادفی</p>
+<p>کاربرد آن برای شبیه سازی نوبت دهی حضوری است</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">number</span><span class="p">():</span>
+        <span class="c1"># create the dict and save it to a file</span>
+        <span class="n">d</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;part1&#39;</span><span class="p">:[</span>
+            <span class="s1">&#39;0912&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;0921&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;0935&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;0938&#39;</span><span class="p">,],</span>
+        <span class="s1">&#39;part2&#39;</span><span class="p">:[</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1111111</span><span class="p">,</span><span class="mi">9999999</span><span class="p">))],</span>
+        <span class="p">}</span>
+
+        <span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;syllables&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+        <span class="c1"># read the dict back in from the file</span>
+        <span class="n">f1</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;syllables&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+        <span class="n">sd</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+        <span class="n">f1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="n">first_part</span><span class="o">=</span><span class="n">sd</span><span class="p">[</span><span class="s1">&#39;part1&#39;</span><span class="p">][</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">sd</span><span class="p">[</span><span class="s1">&#39;part1&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+        <span class="n">second_part</span><span class="o">=</span><span class="n">sd</span><span class="p">[</span><span class="s1">&#39;part2&#39;</span><span class="p">][</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">sd</span><span class="p">[</span><span class="s1">&#39;part2&#39;</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+
+        <span class="c1">#print &#39;%s%s&#39;%(first_part,second_part)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">first_part</span><span class="o">+</span><span class="n">second_part</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>تابعی برای ساخت کاربر تصادفی که سه پارامتر میگیرد</p>
+<p>اولی برای نام کاربر</p>
+<p>دومی برای شماره تلفن کاربر</p>
+<p>سومی برای آدرس ip سرور است</p>
+<p>کاربرد برای شبیه سازی نوبت دهی حضوری</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">req</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">number</span><span class="p">,</span><span class="n">ip</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://&#39;</span><span class="o">+</span> <span class="n">ip</span> <span class="o">+</span><span class="s1">&#39;:8088/users&#39;</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span><span class="s1">&#39;phone_number&#39;</span><span class="p">:</span><span class="n">number</span><span class="p">,</span><span class="s1">&#39;status&#39;</span><span class="p">:</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s2">&quot;turn_number&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="s2">&quot;password&quot;</span><span class="p">:</span><span class="n">number</span><span class="p">,</span><span class="s2">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;ali@yahoo.com&quot;</span><span class="p">}</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>تابعی برای دریافت پارامتر های ارسالی در موقع برنامه است که یک پارامتر میگیرد</p>
+<p>پارامتر برای دادن ورودی های ارسالی به تابع و جدا سازی آن است</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getopts</span><span class="p">(</span><span class="n">argv</span><span class="p">):</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Empty dictionary to store key-value pairs.</span>
+    <span class="k">while</span> <span class="n">argv</span><span class="p">:</span>  <span class="c1"># While there are arguments left to parse...</span>
+        <span class="k">if</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>  <span class="c1"># Found a &quot;-name value&quot; pair.</span>
+            <span class="n">opts</span><span class="p">[</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Add key and value to the dictionary.</span>
+        <span class="n">argv</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>  <span class="c1"># Reduce the argument list by copying it starting from index 1.</span>
+    <span class="k">return</span> <span class="n">opts</span>
+</pre></div>
+</div>
+<p>قسمت اصلی برنامه</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">setup</span><span class="p">()</span>
+    <span class="n">param_ip</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">param_branch</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">myargs</span> <span class="o">=</span> <span class="n">getopts</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
+    <span class="c1"># دریافت پارامتر کد شعبه</span>
+    <span class="k">if</span> <span class="s1">&#39;-branch&#39;</span> <span class="ow">in</span> <span class="n">myargs</span><span class="p">:</span>  <span class="c1"># Example usage.</span>
+        <span class="n">param_branch</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">myargs</span><span class="p">[</span><span class="s1">&#39;-branch&#39;</span><span class="p">])</span>
+    <span class="c1"># دریافت پارامتر آدرس ip</span>
+    <span class="k">if</span> <span class="s1">&#39;-ip&#39;</span> <span class="ow">in</span> <span class="n">myargs</span><span class="p">:</span>  <span class="c1"># Example usage.</span>
+        <span class="n">param_ip</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">myargs</span><span class="p">[</span><span class="s1">&#39;-ip&#39;</span><span class="p">])</span>
+        <span class="k">print</span> <span class="n">param_ip</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">            -ip for connect node ip</span>
+<span class="s1">            -branch for find node branch</span>
+<span class="s1">        &#39;&#39;&#39;</span>
+        <span class="n">quit</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s1">&#39;-h&#39;</span> <span class="ow">in</span> <span class="n">myargs</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">            -ip for connect node ip</span>
+<span class="s1">            -branch for find node branch</span>
+<span class="s1">        &#39;&#39;&#39;</span>
+        <span class="n">quit</span><span class="p">()</span>
+   <span class="c1"># تا موقعی که برنامه در حال اجرا است منتظر فشردن دکمها می ماند</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="c1"># دکمه ۱</span>
+        <span class="n">bt1</span> <span class="o">=</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">bt1</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;B1&#39;</span><span class="p">)</span>
+            <span class="c1"># جلو بردن صف به آدرس سرور و کد شعبه</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="n">RunQueue</span><span class="p">(</span><span class="n">param_ip</span><span class="p">,</span><span class="n">param_branch</span><span class="p">)</span>
+            <span class="c1"># پخش صدا حاوی نوبت کاربر و شماره باجه</span>
+            <span class="n">play</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">q</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                <span class="c1"># خاموش و روشن شدن led</span>
+                <span class="n">blink</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+        <span class="n">bt2</span> <span class="o">=</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">bt2</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;B2&#39;</span><span class="p">)</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="n">RunQueue</span><span class="p">(</span><span class="n">param_ip</span><span class="p">,</span><span class="n">param_branch</span><span class="p">)</span>
+            <span class="n">play</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">q</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                <span class="n">blink</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+        <span class="n">bt3</span> <span class="o">=</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">bt3</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;B3&#39;</span><span class="p">)</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="n">RunQueue</span><span class="p">(</span><span class="n">param_ip</span><span class="p">,</span><span class="n">param_branch</span><span class="p">)</span>
+            <span class="n">play</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">q</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+                <span class="n">blink</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+        <span class="n">bt4</span> <span class="o">=</span> <span class="n">GPIO</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+        <span class="c1"># دکه ۴ یا نوبت دهی حضوری</span>
+        <span class="k">if</span> <span class="n">bt4</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">)</span>
+            <span class="c1"># ساخت نام و نام خانوادگی تصادفی</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">name_family</span><span class="p">()</span>
+            <span class="c1"># ساخت شماره تلفن تصادفی</span>
+            <span class="n">numberr</span> <span class="o">=</span> <span class="n">number</span><span class="p">()</span>
+            <span class="c1"># ارسال درخواست ثبت کاربر</span>
+            <span class="n">req</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">numberr</span><span class="p">,</span><span class="n">param_ip</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://&#39;</span><span class="o">+</span><span class="n">param_ip</span><span class="o">+</span><span class="s1">&#39;:8088/users/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">numberr</span><span class="p">))</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="nb">id</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span>
+                <span class="k">break</span>
+            <span class="c1"># اضافه شدن کاربر به ته صف نوبت ها</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;http://&#39;</span><span class="o">+</span><span class="n">param_ip</span><span class="o">+</span><span class="s1">&#39;:8088/addqueue/&#39;</span><span class="o">+</span><span class="n">param_branch</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nb">id</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="simul-information.html" class="btn btn-neutral" title="مشخصات دستگاه" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      Last updated on Jul 09, 2018.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    $(".icon1").click(function () {
+      $(".mobilenav").fadeToggle(500);
+      $(".top-menu").toggleClass("top-animate");
+      $(".mid-menu").toggleClass("mid-animate");
+      $(".bottom-menu").toggleClass("bottom-animate");
+    });
+  });
+</script>
+
+</body>
+</html>
