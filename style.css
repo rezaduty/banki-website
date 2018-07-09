@@ -35,11 +35,11 @@ CSS INDEX
 
 /*-------------------
 2. Theme Default CSS
---------------------*/
+--------------------
 @font-face {
     font-family: Lalezar;
     src: url(fonts/Lalezar.ttf);
-}
+}*/
 @font-face {
     font-family: Vazir-Light;
     src: url(fonts/Vazir-Light.ttf);
