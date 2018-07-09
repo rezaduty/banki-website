@@ -12,6 +12,8 @@
     <!-- Title -->
     <title>Banki | بانکی | نوبت دهی غیر حضوری بانک</title>
     <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
     <!-- Plugin-CSS -->
@@ -19,7 +21,6 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.css">
 
-    <link rel="stylesheet" href="css/themify-icons.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/animate.css">
     <!-- Main-Stylesheets -->
@@ -217,52 +218,52 @@
                 <div class="col-xs-12">
                     <div class="clients">
                         <div class="item">
-                            <img src="images/maskan-300-c.png" alt="">
+                            <img class="lazy" data-src="images/maskan-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/mellat-300-c.png" alt="">
+                            <img class="lazy" data-src="images/mellat-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/bmi-300-c.png" alt="">
+                            <img class="lazy" data-src="images/bmi-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/bki-300-c.png" alt="">
+                            <img class="lazy" data-src="images/bki-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/en-300-c.png" alt="">
+                            <img class="lazy" data-src="images/en-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/ansar-300-c.png" alt="">
+                            <img class="lazy" data-src="images/ansar-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/ghbi-300-c.png" alt="">
+                            <img class="lazy" data-src="images/ghbi-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/hi-300-c.png" alt="">
+                            <img class="lazy" data-src="images/hi-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/sb-300-c.png" alt="">
+                            <img class="lazy" data-src="images/sb-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/shahr-300-c.png" alt="">
+                            <img class="lazy" data-src="images/shahr-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/tejarat-300-c.png" alt="">
+                            <img class="lazy" data-src="images/tejarat-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/tt-300-c.png" alt="">
+                            <img class="lazy" data-src="images/tt-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/tourism-300-c.png" alt="">
+                            <img class="lazy" data-src="images/tourism-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/sarmayeh-300-c.png" alt="">
+                            <img class="lazy" data-src="images/sarmayeh-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/kar-300-c.png" alt="">
+                            <img class="lazy" data-src="images/kar-300-c.png" alt="">
                         </div>
                         <div class="item">
-                            <img src="images/iz-300-c.png" alt="">
+                            <img class="lazy" data-src="images/iz-300-c.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -542,6 +543,13 @@
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+         $('.lazy').lazy();
+     });
+
+    </script>
 
 </body>
 
