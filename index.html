@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <!-- Main-Stylesheets -->
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="style.css?v=1.6">
+    <link rel="stylesheet" href="style.css?v=1.7">
     <link rel="stylesheet" href="css/responsive.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
@@ -56,9 +56,7 @@
     font-size: 6rem;
   }
 }
-body{
-  overflow-x: hidden;
-}
+
 </style>
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -119,7 +117,9 @@ body{
                     <div class="home-text">
                     <h2 class="handle-top">راه حل های هوشمندانه بانکی </h2>
                     <br>
-                    <h3 class="vazir-font">ما با استفاده از راه حل های فناورانه در حوزه خدمات بانکی حرکت میکنیم</h4>
+                    <h3 class="vazir-font">از بانک مورد نظر خود به  صورت غیر حضوری نوبت بگیرید و سر وقت به بانک مراجعه کنید</h4>
+                      <br>
+                      <a target="_blank" id="download" href="banki.apk"><div data-title="دانلود اپلیکیشن اندروید" class="a"></dvi></a>
 
 
                   </div>
@@ -611,6 +611,47 @@ body{
     $(function() {
          $('.lazy').lazy();
      });
+
+/* download button */
+     var docStyle = document.documentElement.style;
+var aElem = document.querySelector('.a');
+var boundingClientRect = aElem.getBoundingClientRect();
+
+aElem.onmousemove = function (e) {
+
+	var x = e.clientX - boundingClientRect.left;
+	var y = e.clientY - boundingClientRect.top;
+
+	var xc = boundingClientRect.width / 2;
+	var yc = boundingClientRect.height / 2;
+
+	var dx = x - xc;
+	var dy = y - yc;
+
+	docStyle.setProperty('--rx', dy / -1 + 'deg');
+	docStyle.setProperty('--ry', dx / 10 + 'deg');
+
+};
+
+aElem.onmouseleave = function (e) {
+
+	docStyle.setProperty('--ty', '0');
+	docStyle.setProperty('--rx', '0');
+	docStyle.setProperty('--ry', '0');
+
+};
+
+aElem.onmousedown = function (e) {
+window.open('banki.apk', '_blank');
+	docStyle.setProperty('--tz', '25px');
+
+};
+
+document.body.onmouseup = function (e) {
+
+	docStyle.setProperty('--tz', '15px');
+
+};
 
     </script>
 
